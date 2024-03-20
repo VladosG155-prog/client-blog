@@ -1,12 +1,17 @@
 'use client'
-import { useLocale } from 'next-intl'
-import { useParams } from 'next/navigation'
 import { useTransition } from 'react'
+import { Button } from '@components/ui/Button'
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
 
-import { usePathname, useRouter } from '../../../../navigation'
-import { Button } from '../../ui/Button'
+import { ROUTES } from '@/app/constants/routes'
+import { usePathname, useRouter } from '@/navigation'
+
+import styles from './header.module.scss'
 
 export const Header = () => {
+  const t = useTranslations('header')
   const router = useRouter()
   const pathname = usePathname()
 
@@ -27,8 +32,19 @@ export const Header = () => {
   }
 
   return (
-    <div>
-      <Button onClick={onChangeLocale}>gagaga</Button>
-    </div>
+    <header className={styles.header}>
+      <h4>Modsen Client Blog</h4>
+      <div className={styles.headerEnd}>
+        <nav className={styles.nav}>
+          <Link href={ROUTES.HOME}>Home</Link>
+          <Link href={ROUTES.BLOG}>Blog</Link>
+          <Link href={ROUTES.ABOUT_US}>About Us</Link>
+          <Link href={ROUTES.CONTACT_US}>Contact us</Link>
+        </nav>
+        <Button variant='white' onClick={onChangeLocale}>
+          {t('Video about us')}
+        </Button>
+      </div>
+    </header>
   )
 }

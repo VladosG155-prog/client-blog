@@ -1,0 +1,38 @@
+.root {
+  padding: 32px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  &.preview {
+    &:hover {
+      background: var(--color-light_yellow);
+    }
+    & p {
+      margin-top: 0px;
+    }
+    h3 {
+      @include heading(4);
+    }
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+  .info {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    & a {
+      color: var(--color-purple);
+    }
+  }
+  p {
+    font-size: var(--text-size-7);
+    color: var(--color-gray);
+    margin-bottom: 33px;
+  }
+  h3 {
+    @include heading(3);
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+}

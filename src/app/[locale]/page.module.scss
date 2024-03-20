@@ -1,0 +1,12 @@
+.posts {
+  padding-top: 130px;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 32px;
+}
+.featurePost {
+  grid-column: 1 / 2;
+}
+.allPosts {
+  grid-column: 2 / 3;
+}

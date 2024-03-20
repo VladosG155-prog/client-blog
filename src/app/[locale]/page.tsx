@@ -1,12 +1,33 @@
-import { useTranslations } from 'next-intl'
+import { Post } from '../components/entities/Post'
+
+import { Banner } from './components/banner'
+import { allPosts, featurePost } from './config'
+
 import styles from './page.module.scss'
 
-export default function Index() {
-  const t = useTranslations('Index')
-
+export default function Home() {
   return (
-    <main className={styles.main}>
-      <h1>{t('hello')}</h1>
+    <main className={styles.root}>
+      <Banner />
+      <div className={styles.posts}>
+        <div className={styles.featurePost}>
+          <h3>Featured Post</h3>
+          <Post {...featurePost} />
+        </div>
+        <div className={styles.allPosts}>
+          <h3>All Posts</h3>
+          {allPosts.map(({ id, title, description, createdBy, createdDate }) => (
+            <Post
+              key={id}
+              isPreviewPost
+              createdBy={createdBy}
+              createdDate={createdDate}
+              description={description}
+              title={title}
+            />
+          ))}
+        </div>
+      </div>
     </main>
   )
 }

@@ -1,12 +1,39 @@
 @import './reset';
 
+body {
+  font-family: var(--font-inter) !important;
+  position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
 :root {
+  --text-size-0: 56px;
+  --text-size-1: 48px;
+  --text-size-2: 36px;
+  --text-size-3: 28px;
+  --text-size-4: 24px;
+  --text-size-5: 20px;
+  --text-size-6: 16px;
+  --text-size-7: 14px;
+  --text-size-button: 18px;
   --color-yellow: #ffd050;
   --color-dark_blue: #232536;
-  --color-purple: #232536;
+  --color-purple: #592ea9;
   --color-gray: #4c4c4c;
   --color-light_gray: #6d6e76;
   --color-white_gray: #f4f4f4;
   --color-pink: #f4f0f8;
   --color-light_yellow: #fbf6ea;
+  --color-white: #ffffff;
+}
+
+.container {
+  width: calc(100% - 160px);
+  padding: 0px 15px;
+  margin: 0 auto;
 }

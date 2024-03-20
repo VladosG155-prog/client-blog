@@ -1,0 +1,42 @@
+.root {
+  height: 720px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../../../assets/homebanner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  @include flex($align: center, $justify: flex-start);
+}
+.container {
+  @include container;
+  color: var(--color-white);
+
+  & h1 {
+    @include heading(0);
+    max-width: 60%;
+    line-height: 1.25;
+    margin-bottom: 25px;
+  }
+  & h4 {
+    @include heading(6);
+    font-family: var(--font-inter);
+    font-weight: 500;
+
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    & span {
+      font-weight: 900;
+    }
+  }
+  & p {
+    @include heading(6);
+    font-weight: 400;
+    margin-bottom: 15px;
+    max-width: 45%;
+    line-height: 28px;
+    & span {
+      color: var(--color-yellow);
+    }
+  }
+}
