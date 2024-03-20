@@ -3,10 +3,37 @@
   display: grid;
   grid-template-columns: 65% 35%;
   gap: 32px;
+  .header {
+    @include flex($align: center);
+    margin-bottom: 32px;
+    & a {
+      color: var(--color-purple);
+      font-size: var(--text-size-6);
+    }
+    & h3 {
+      @include heading(3);
+    }
+  }
+}
+.singlePost {
+  border: 1px solid var(--color-light_gray);
 }
 .featurePost {
   grid-column: 1 / 2;
+  height: max-content;
 }
 .allPosts {
   grid-column: 2 / 3;
+}
+
+.cards {
+  margin-top: 128px;
+  & h2 {
+    text-align: center;
+    @include heading(2);
+  }
+  .wrapper {
+    margin-top: 50px;
+    @include flex;
+  }
 }

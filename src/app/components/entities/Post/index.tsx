@@ -15,12 +15,12 @@ export const Post: FC<IPostProps> = ({ title, image, description, createdBy, cre
         [styles.preview]: isPreviewPost
       })}
     >
-      {image && !isPreviewPost && <Image src={image} alt='post' objectFit='contain' />}
+      {image && !isPreviewPost && <Image src={image} alt='post' />}
       <p className={styles.info}>
         By <Link href='/'>{createdBy}</Link> | {createdDate}
       </p>
       <h3>{title}</h3>
-      {!isPreviewPost && <p>{description}</p>}
+      {!isPreviewPost && <p className={styles.description}>{description}</p>}
       {!isPreviewPost && <Button variant='primary'>Read More {'>'} </Button>}
     </div>
   )

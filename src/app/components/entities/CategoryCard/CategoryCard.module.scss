@@ -1,0 +1,20 @@
+.root {
+  border: 1px solid var(--color-light_gray);
+  max-width: 250px;
+  padding: 32px;
+  & h3 {
+    @include heading(3);
+  }
+  & p {
+    margin-top: 5px;
+    font-size: var(--text-size-7);
+    color: var(--color-light_gray);
+  }
+  & i {
+    width: 48px;
+    height: 48px;
+    @include flex($justify: center, $align: center);
+    background: var(--color-light_yellow);
+    border-radius: 5px;
+  }
+}
