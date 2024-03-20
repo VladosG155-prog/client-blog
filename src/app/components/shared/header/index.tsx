@@ -1,10 +1,10 @@
 'use client'
-import { useTransition } from 'react'
-import { useParams } from 'next/navigation'
 import { useLocale } from 'next-intl'
+import { useParams } from 'next/navigation'
+import { useTransition } from 'react'
 
-import { usePathname, useRouter } from '../../../navigation'
-import { Button } from '../ui/Button'
+import { usePathname, useRouter } from '../../../../navigation'
+import { Button } from '../../ui/Button'
 
 export const Header = () => {
   const router = useRouter()

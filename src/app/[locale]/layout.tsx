@@ -1,8 +1,8 @@
-import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ReactNode } from 'react'
 
-import { Header } from '../components/shared/Header'
+import { Header } from '../components/shared/header'
 
 import '../styles/index.scss'
 
