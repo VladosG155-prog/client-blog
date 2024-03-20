@@ -1,18 +1,19 @@
-"use client";
-import { Button } from "../ui/Button";
-import { useParams } from "next/navigation";
-import { useTransition } from "react";
-import { useRouter, usePathname } from "../../../navigation";
-import { useLocale } from "next-intl";
+'use client'
+import { useTransition } from 'react'
+import { useParams } from 'next/navigation'
+import { useLocale } from 'next-intl'
+
+import { usePathname, useRouter } from '../../../navigation'
+import { Button } from '../ui/Button'
 
 export const Header = () => {
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useRouter()
+  const pathname = usePathname()
 
-  const locale = useLocale();
+  const locale = useLocale()
 
-  const [isPending, startTransition] = useTransition();
-  const params = useParams();
+  const [isPending, startTransition] = useTransition()
+  const params = useParams()
   const onChangeLocale = () => {
     startTransition(() => {
       router.replace(
@@ -20,14 +21,14 @@ export const Header = () => {
         // are used in combination with a given `pathname`. Since the two will
         // always match for the current route, we can skip runtime checks.
         { pathname, params },
-        { locale: locale === "ru" ? "en" : "ru" }
-      );
-    });
-  };
+        { locale: locale === 'ru' ? 'en' : 'ru' }
+      )
+    })
+  }
 
   return (
     <div>
       <Button onClick={onChangeLocale}>gagaga</Button>
     </div>
-  );
-};
+  )
+}

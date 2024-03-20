@@ -1,3 +1,23 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "plugins": ["simple-import-sort"],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^\\u0000"],
+          ["^react$", "^@?\\w"],
+          ["^@", "^"],
+          ["^\\./"],
+          ["^.+\\.(module.css|module.scss)$"],
+          ["^.+\\.(gif|png|svg|jpg)$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error"
+  }
 }
