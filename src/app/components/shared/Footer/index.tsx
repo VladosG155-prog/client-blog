@@ -1,4 +1,5 @@
 import React from 'react'
+import { Icon } from '@components/ui/Icon'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
@@ -24,6 +25,26 @@ export const Footer = () => {
         </nav>
       </div>
       <MailForm />
+      <div className={styles.footerEnd}>
+        <div>
+          <p>Finstreet 118 2561 Fintown</p>
+          <p>Hello@finsweet.com 020 7993 2905</p>
+        </div>
+        <div className={styles.social}>
+          <Link href='https://www.facebook.com/ModsenSoftware/'>
+            <Icon name='facebook' />
+          </Link>
+          <Link href='https://twitter.com/modsencompany'>
+            <Icon name='twitter' />
+          </Link>
+          <Link href='https://www.instagram.com/modsencompany/'>
+            <Icon name='instagram' />
+          </Link>
+          <Link href='https://www.linkedin.com/company/modsen'>
+            <Icon name='linkedin' />
+          </Link>
+        </div>
+      </div>
     </footer>
   )
 }

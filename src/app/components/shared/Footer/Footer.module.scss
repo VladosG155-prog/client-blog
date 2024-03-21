@@ -18,3 +18,15 @@
     }
   }
 }
+.footerEnd {
+  margin-top: 60px;
+  @include flex;
+  @include interText;
+}
+.social {
+  @include flex;
+  gap: 25px;
+  svg path {
+    fill: var(--color-light_gray);
+  }
+}

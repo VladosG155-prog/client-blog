@@ -21,12 +21,11 @@ export const Review = () => {
   }
   const handleClickPrev = () => {
     if (activeSlide === 1) {
-      setActiveSlide((prev) => (prev -= 1))
-    } else {
       setActiveSlide(slides.length)
+    } else {
+      setActiveSlide((prev) => (prev -= 1))
     }
   }
-  console.log(activeSlide)
 
   return (
     <section className={styles.root}>
