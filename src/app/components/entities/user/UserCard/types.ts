@@ -6,6 +6,6 @@ export interface IUserCardProps {
   name: string
   jobPosition: string
   links: {
-    [key in 'facebook' | 'twitter' | 'instagram' | 'linkedin']: string
+    [key in Extract<keyof typeof iconNames, 'instagram' | 'linkedin' | 'facebook' | 'twitter'>]: string
   }
 }

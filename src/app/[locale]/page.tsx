@@ -1,13 +1,15 @@
 import { CategoryCard } from '@components/entities/CategoryCard'
 import { Post } from '@components/entities/Post'
-import { UserCard } from '@components/entities/UserCard'
 import { ROUTES } from '@constants/routes'
 import Link from 'next/link'
 
+import { UserCard } from '@/app/components/entities/user/UserCard'
+
 import { About } from './components/about'
 import { Banner } from './components/banner'
+import { Review } from './components/review'
 import { SpecialPost } from './components/specialPost'
-import { allPosts, authors, featurePost } from './config'
+import { allPosts, authors, companies, featurePost } from './config'
 
 import styles from './page.module.scss'
 
@@ -68,6 +70,7 @@ export default function Home() {
         </div>
       </section>
       <SpecialPost />
+
       <section className={styles.authors}>
         <h2>List of Authors</h2>
         <div className={styles.wrapper}>
@@ -76,6 +79,17 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <section className={styles.companies}>
+        <div className={styles.textLogo}>
+          <p>We are</p>
+          <h4>Featured in</h4>
+        </div>
+        {companies.map((CompanyLogo, index) => (
+          <CompanyLogo key={index} />
+        ))}
+      </section>
+      <Review />
     </main>
   )
 }

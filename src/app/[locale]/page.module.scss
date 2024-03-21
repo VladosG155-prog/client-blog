@@ -50,3 +50,19 @@
     @include flex;
   }
 }
+
+.companies {
+  margin-top: 100px;
+  @include flex;
+}
+
+.textLogo {
+  & p {
+    font-size: var(--text-size-7);
+    color: var(--color-light_gray);
+  }
+  & h4 {
+    @include heading(4, var(--color-light_gray));
+    line-height: 32px;
+  }
+}
