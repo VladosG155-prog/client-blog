@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { Inter, Sen } from 'next/font/google'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 
+import { Footer } from '../components/shared/Footer'
 import { Header } from '../components/shared/Header'
 
 const inter = Inter({ subsets: ['latin'], weight: ['900', '700', '400', '500'], variable: '--font-inter' })
@@ -29,6 +30,7 @@ export default function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <div className='container'>{children}</div>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

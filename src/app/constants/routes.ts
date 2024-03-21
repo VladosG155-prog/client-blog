@@ -3,5 +3,6 @@ export const ROUTES = {
   BLOG: '/blog',
   ABOUT_US: '/about-us',
   CONTACT_US: '/contact-us',
-  POSTS: '/posts'
+  POSTS: '/posts',
+  PRIVACY_POLICY: '/privacy_policy'
 }
