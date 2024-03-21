@@ -1,0 +1,44 @@
+.root {
+  padding: 32px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+
+  &.preview {
+    padding: 20px 16px;
+    &:hover {
+      background: var(--color-light_yellow);
+    }
+    & p {
+      margin-top: 0px;
+    }
+    h3 {
+      @include heading(4);
+    }
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+
+  p {
+    font-size: var(--text-size-7);
+    margin-bottom: 33px;
+    &.info {
+      margin-top: 32px;
+      margin-bottom: 16px;
+      & a {
+        color: var(--color-purple);
+      }
+    }
+    &.description {
+      color: var(--color-light_gray);
+      line-height: 28px;
+    }
+  }
+  h3 {
+    @include heading(3);
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+}

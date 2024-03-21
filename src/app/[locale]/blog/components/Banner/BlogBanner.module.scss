@@ -1,0 +1,37 @@
+.root {
+  height: 720px;
+  width: 100vw;
+  background: var(--color-pink);
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  @include flex($align: center, $justify: flex-start);
+}
+.container {
+  @include container;
+  color: var(--color-white);
+
+  & h1 {
+    @include heading(0);
+    max-width: 60%;
+    line-height: 1.25;
+    margin-bottom: 25px;
+  }
+  & h4 {
+    @include heading(6);
+    font-family: var(--font-inter);
+    font-weight: 500;
+
+    margin-bottom: 25px;
+    & span {
+      font-weight: 900;
+    }
+  }
+  & p {
+    @include interText($color: var(--color-white));
+    margin-bottom: 15px;
+    max-width: 45%;
+    & span {
+      color: var(--color-yellow);
+    }
+  }
+}

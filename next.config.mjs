@@ -8,7 +8,15 @@ const withNextIntl = createNextIntlPlugin()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const nextConfig = {
   sassOptions: {
-    includePaths: [join(__dirname, 'styles')]
+    includePaths: [join(__dirname, 'styles')],
+    additionalData: '@import "./src/app/styles/_mixins.scss";'
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      use: ['@svgr/webpack']
+    })
+    return config
   }
 }
 

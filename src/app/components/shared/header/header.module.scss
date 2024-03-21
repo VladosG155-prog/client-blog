@@ -1,0 +1,22 @@
+.header {
+  background: var(--color-dark_blue);
+  padding: 18px 55px;
+
+  @include flex();
+  h4 {
+    @include heading(4);
+    color: var(--color-white);
+  }
+}
+.headerEnd {
+  @include flex;
+  gap: 32px;
+}
+.nav {
+  @include flex($justify: flex-start);
+  gap: 25px;
+  & a {
+    @include interText($color: var(--color-white));
+    text-decoration: none;
+  }
+}

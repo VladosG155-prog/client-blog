@@ -1,5 +1,15 @@
 {
-  "Index": {
-    "hello": "Hello"
+  "header": {
+    "Video about us": "Video about us",
+    "Home": "Home",
+    "Blog": "Blog",
+    "About_us": "About us",
+    "Contact_us": "Contact us",
+    "Privacy_policy": "Privacy Policy"
+  },
+  "banner": {
+    "title": "Step-by-step guide to choosing great font pairs",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "posted": "Posted on <important>startup</important>"
   }
 }

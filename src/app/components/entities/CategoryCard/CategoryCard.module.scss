@@ -1,0 +1,26 @@
+.root {
+  border: 1px solid var(--border-light_gray);
+  max-width: 290px;
+  padding: 32px;
+  transition: 0.2s all ease;
+  &:hover {
+    background: var(--color-yellow);
+    border-color: var(--color-yellow);
+  }
+  & h3 {
+    @include heading(3);
+    margin-top: 16px;
+    margin-bottom: 4px;
+  }
+  & p {
+    margin-top: 5px;
+    @include interText;
+  }
+  & i {
+    width: 48px;
+    height: 48px;
+    @include flex($justify: center, $align: center);
+    background: var(--color-light_yellow);
+    border-radius: 5px;
+  }
+}

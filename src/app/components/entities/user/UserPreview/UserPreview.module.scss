@@ -1,0 +1,11 @@
+.root {
+  @include flex($justify: flex-start);
+  gap: 16px;
+  & h4 {
+    @include heading(4);
+    line-height: 32px;
+  }
+  & p {
+    @include interText;
+  }
+}

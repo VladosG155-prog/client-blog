@@ -1,0 +1,23 @@
+.root {
+  padding: 16px 48px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: var(--text-size-button);
+  font-weight: 700;
+  font-family: var(--font-sen);
+  transition: 0.15s all ease-in;
+
+  &[data-variant='white'] {
+    background: var(--color-white);
+    color: var(--color-dark_blue);
+  }
+
+  &[data-variant='primary'] {
+    background: var(--color-yellow);
+    color: var(--color-dark_blue);
+    &:hover {
+      background: #edc14abd;
+    }
+  }
+}

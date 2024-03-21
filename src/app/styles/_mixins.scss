@@ -1,0 +1,28 @@
+@mixin heading($size, $color: inherit) {
+  font-size: var(--text-size-#{$size});
+  color: $color;
+  font-family: var(--font-sen);
+  font-weight: 700;
+}
+
+@mixin interText($color: var(--color-light_gray), $weight: 400) {
+  font-size: var(--text-size-6);
+  color: $color;
+  font-family: var(--font-inter);
+  line-height: 28px;
+  font-weight: $weight;
+}
+
+@mixin flex($align: center, $justify: space-between, $direction: row, $wrap: noWrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin container {
+  width: calc(100% - 160px);
+  padding: 0px 15px;
+  margin: 0 auto;
+}
