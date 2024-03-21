@@ -8,7 +8,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { ROUTES } from '@/app/constants/routes'
 import { usePathname, useRouter } from '@/navigation'
 
-import styles from './header.module.scss'
+import styles from './Header.module.scss'
 
 export const Header = () => {
   const t = useTranslations('header')

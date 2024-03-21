@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { Inter, Sen } from 'next/font/google'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 
-import { Header } from '../components/shared/header'
+import { Header } from '../components/shared/Header'
 
 const inter = Inter({ subsets: ['latin'], weight: ['900', '700', '400', '500'], variable: '--font-inter' })
 const sen = Sen({ subsets: ['latin'], weight: ['700', '400', '500'], variable: '--font-sen' })

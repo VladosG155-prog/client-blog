@@ -4,6 +4,7 @@ import { ROUTES } from '@constants/routes'
 import Link from 'next/link'
 
 import { UserCard } from '@/app/components/entities/user/UserCard'
+import { JoinUs } from '../components/shared/JoinUs'
 
 import { About } from './components/about'
 import { Banner } from './components/banner'
@@ -90,6 +91,7 @@ export default function Home() {
         ))}
       </section>
       <Review />
+      <JoinUs />
     </main>
   )
 }
