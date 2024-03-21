@@ -36,10 +36,10 @@ export const Header = () => {
       <h4>Modsen Client Blog</h4>
       <div className={styles.headerEnd}>
         <nav className={styles.nav}>
-          <Link href={ROUTES.HOME}>Home</Link>
-          <Link href={ROUTES.BLOG}>Blog</Link>
-          <Link href={ROUTES.ABOUT_US}>About Us</Link>
-          <Link href={ROUTES.CONTACT_US}>Contact us</Link>
+          <Link href={ROUTES.HOME}>{t('Home')}</Link>
+          <Link href={ROUTES.BLOG}>{t('Blog')}</Link>
+          <Link href={ROUTES.ABOUT_US}>{t('About_us')}</Link>
+          <Link href={ROUTES.CONTACT_US}>{t('Contact_us')}</Link>
         </nav>
         <Button variant='white' onClick={onChangeLocale}>
           {t('Video about us')}

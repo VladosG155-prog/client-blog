@@ -5,10 +5,11 @@
   font-weight: 700;
 }
 
-@mixin text($size, $color, $weight) {
-  font-size: var(--text-size-#{$size});
+@mixin interText($color: var(--color-light_gray), $weight: 400) {
+  font-size: var(--text-size-6);
   color: $color;
   font-family: var(--font-inter);
+  line-height: 28px;
   font-weight: $weight;
 }
 

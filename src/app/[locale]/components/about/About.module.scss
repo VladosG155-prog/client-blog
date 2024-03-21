@@ -23,9 +23,7 @@
     text-transform: uppercase;
   }
   & p {
-    font-family: var(--font-inter);
-    font-size: var(--text-size-6);
-    color: var(--color-light_gray);
+    @include interText;
     margin-top: 16px;
     line-height: 28px;
   }

@@ -16,7 +16,7 @@
   @include flex($justify: flex-start);
   gap: 25px;
   & a {
-    @include text(6, var(--color-white), 400);
+    @include interText($color: var(--color-white));
     text-decoration: none;
   }
 }

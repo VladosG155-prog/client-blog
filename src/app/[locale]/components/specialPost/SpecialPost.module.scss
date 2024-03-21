@@ -1,0 +1,30 @@
+.root {
+  margin-top: 128px;
+  width: 100%;
+  position: relative;
+}
+.image {
+  width: 70%;
+}
+.info {
+  background: var(--color-white);
+  padding: 80px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  & h5 {
+    @include interText($color: var(--color-dark_blue), $weight: 600);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  & h1 {
+    @include heading(1);
+    margin-bottom: 16px;
+    margin-top: 24px;
+  }
+  & p {
+    @include interText;
+    margin-bottom: 24px;
+  }
+}

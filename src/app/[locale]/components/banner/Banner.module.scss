@@ -23,18 +23,15 @@
     font-family: var(--font-inter);
     font-weight: 500;
 
-    text-transform: uppercase;
     margin-bottom: 25px;
     & span {
       font-weight: 900;
     }
   }
   & p {
-    @include heading(6);
-    font-weight: 400;
+    @include interText($color: var(--color-white));
     margin-bottom: 15px;
     max-width: 45%;
-    line-height: 28px;
     & span {
       color: var(--color-yellow);
     }

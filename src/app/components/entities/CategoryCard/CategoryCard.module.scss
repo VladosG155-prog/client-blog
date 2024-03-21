@@ -1,14 +1,20 @@
 .root {
-  border: 1px solid var(--color-light_gray);
-  max-width: 250px;
+  border: 1px solid var(--border-light_gray);
+  max-width: 290px;
   padding: 32px;
+  transition: 0.2s all ease;
+  &:hover {
+    background: var(--color-yellow);
+    border-color: var(--color-yellow);
+  }
   & h3 {
     @include heading(3);
+    margin-top: 16px;
+    margin-bottom: 4px;
   }
   & p {
     margin-top: 5px;
-    font-size: var(--text-size-7);
-    color: var(--color-light_gray);
+    @include interText;
   }
   & i {
     width: 48px;

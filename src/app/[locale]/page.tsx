@@ -1,12 +1,13 @@
+import { CategoryCard } from '@components/entities/CategoryCard'
+import { Post } from '@components/entities/Post'
+import { UserCard } from '@components/entities/UserCard'
+import { ROUTES } from '@constants/routes'
 import Link from 'next/link'
-
-import { CategoryCard } from '../components/entities/CategoryCard'
-import { Post } from '../components/entities/Post'
-import { ROUTES } from '../constants/routes'
 
 import { About } from './components/about'
 import { Banner } from './components/banner'
-import { allPosts, featurePost } from './config'
+import { SpecialPost } from './components/specialPost'
+import { allPosts, authors, featurePost } from './config'
 
 import styles from './page.module.scss'
 
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <main className={styles.root}>
       <Banner />
-      <div className={styles.posts}>
+      <section className={styles.posts}>
         <div className={styles.featurePost}>
           <div className={styles.header}>
             <h3>Featured Post</h3>
@@ -39,9 +40,9 @@ export default function Home() {
             />
           ))}
         </div>
-      </div>
+      </section>
       <About />
-      <div className={styles.cards}>
+      <section className={styles.cards}>
         <h2>Choose A Catagory</h2>
         <div className={styles.wrapper}>
           <CategoryCard
@@ -65,7 +66,16 @@ export default function Home() {
             description='Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
           />
         </div>
-      </div>
+      </section>
+      <SpecialPost />
+      <section className={styles.authors}>
+        <h2>List of Authors</h2>
+        <div className={styles.wrapper}>
+          {authors.map(({ id, name, imageUrl, links, jobPosition }) => (
+            <UserCard key={id} name={name} imageUrl={imageUrl} links={links} jobPosition={jobPosition} />
+          ))}
+        </div>
+      </section>
     </main>
   )
 }

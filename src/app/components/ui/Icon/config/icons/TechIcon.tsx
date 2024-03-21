@@ -1,6 +1,6 @@
 export const TechIcon = () => (
   <svg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <g clip-path='url(#clip0_2_625)'>
+    <g clipPath='url(#clip0_2_625)'>
       <path
         d='M27.5176 19.0312C27.5176 19.8065 28.1486 20.4375 28.9238 20.4375H33.1042C33.0283 19.4479 32.7988 18.5021 32.4316 17.625H28.9238C28.1486 17.625 27.5176 18.256 27.5176 19.0312Z'
         fill='#232536'
