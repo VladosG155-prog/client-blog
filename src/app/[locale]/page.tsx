@@ -4,6 +4,7 @@ import { ROUTES } from '@constants/routes'
 import Link from 'next/link'
 
 import { UserCard } from '@/app/components/entities/user/UserCard'
+import { CategoriesList } from '../components/shared/CategoriesList'
 import { JoinUs } from '../components/shared/JoinUs'
 
 import { About } from './components/about'
@@ -45,31 +46,7 @@ export default function Home() {
         </div>
       </section>
       <About />
-      <section className={styles.cards}>
-        <h2>Choose A Catagory</h2>
-        <div className={styles.wrapper}>
-          <CategoryCard
-            iconName='business'
-            title='Business'
-            description='Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
-          />
-          <CategoryCard
-            iconName='startup'
-            title='Startup'
-            description='Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
-          />
-          <CategoryCard
-            iconName='economy'
-            title='Economy'
-            description='Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
-          />
-          <CategoryCard
-            iconName='tech'
-            title='Technology'
-            description='Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
-          />
-        </div>
-      </section>
+      <CategoriesList align='center' title='Choose A Catagory' />
       <SpecialPost />
 
       <section className={styles.authors}>

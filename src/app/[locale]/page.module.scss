@@ -26,18 +26,6 @@
   grid-column: 2 / 3;
 }
 
-.cards {
-  margin-top: 128px;
-  & h2 {
-    text-align: center;
-    @include heading(2);
-  }
-  .wrapper {
-    margin-top: 50px;
-    @include flex;
-  }
-}
-
 .authors {
   margin-top: 128px;
   & h2 {

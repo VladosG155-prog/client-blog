@@ -1,0 +1,13 @@
+.center {
+  text-align: center;
+}
+.cards {
+  margin-top: 128px;
+  & h2 {
+    @include heading(2);
+  }
+  .wrapper {
+    margin-top: 50px;
+    @include flex;
+  }
+}
