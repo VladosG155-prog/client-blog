@@ -1,8 +1,7 @@
-import { StaticImageData } from 'next/image'
-
 export interface ITaggedPostProps {
-  imageUrl: StaticImageData
-  tag: string
+  id: number
+  imageUrl: string
+  category: string
   title: string
   description: string
 }

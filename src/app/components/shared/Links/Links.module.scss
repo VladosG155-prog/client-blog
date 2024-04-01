@@ -1,0 +1,4 @@
+.root {
+  @include flex($justify: flex-start);
+  gap: 15px;
+}

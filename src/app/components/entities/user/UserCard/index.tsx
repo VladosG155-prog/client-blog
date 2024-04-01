@@ -1,29 +1,26 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 
-import { Icon } from '../../../ui/Icon'
+import { Links } from '@/app/components/shared/Links'
+import { ROUTES } from '@/app/constants/routes'
 
 import { IUserCardProps } from './types'
 
 import styles from './UserCard.module.scss'
 
-export const UserCard: FC<IUserCardProps> = ({ imageUrl, name, jobPosition, links }) => {
-  const iconKeys = Object.keys(links) as (keyof typeof links)[]
-
+export const UserCard: FC<IUserCardProps> = ({ id, imageUrl, name, jobPosition, links }) => {
   return (
     <div className={styles.root}>
+      <Link data-testid='user-link' role='link' className={styles.cardLink} href={ROUTES.AUTHORS + '/' + id} />
       <div className={styles.avatar}>
-        <Image src={imageUrl} alt='user' />
+        <Image width={128} height={128} src={imageUrl} alt='user' />
       </div>
       <h3>{name}</h3>
       <p>{jobPosition}</p>
       <div className={styles.links}>
-        {iconKeys.map((key) => (
-          <Link key={key} href={links[key]}>
-            <Icon key={key} name={key} />
-          </Link>
-        ))}
+        <Links links={links} />
       </div>
     </div>
   )

@@ -1,8 +1,15 @@
+.root {
+  width: 100%;
+}
 .posts {
   padding-top: 130px;
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 2fr 1fr;
   gap: 32px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
   .header {
     @include flex($align: center);
     margin-bottom: 32px;
@@ -17,13 +24,14 @@
 }
 .singlePost {
   border: 1px solid var(--border-light_gray);
+  & img {
+    max-height: 350px;
+  }
 }
 .featurePost {
-  grid-column: 1 / 2;
   height: max-content;
 }
 .allPosts {
-  grid-column: 2 / 3;
 }
 
 .authors {
@@ -35,13 +43,15 @@
   .wrapper {
     gap: 32px;
     margin-top: 50px;
-    @include flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   }
 }
 
 .companies {
   margin-top: 100px;
-  @include flex;
+  @include flex($wrap: wrap);
+  gap: 30px;
 }
 
 .textLogo {

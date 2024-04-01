@@ -1,0 +1,57 @@
+.root {
+  max-width: 768px;
+  margin: 0 auto;
+  padding-top: 120px;
+  @include flex($direction: column, $align: center, $justify: center);
+  text-align: center;
+}
+.start {
+  & h1 {
+    @include heading(1);
+    margin-bottom: 25px;
+  }
+  & p {
+    @include interText;
+    margin-bottom: 65px;
+  }
+  & h6 {
+    @include interText($weight: 900, $color: var(--color-dark_blue));
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+}
+
+.info {
+  width: 100%;
+  background: var(--color-purple);
+  text-align: start;
+  padding: 48px 65px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  color: #fff;
+  margin-bottom: 30px;
+  & h6 {
+    @include interText($color: var(--color-white_gray));
+    font-size: var(--text-size-7);
+    padding-bottom: 15px;
+    opacity: 0.6;
+    border-bottom: 1px solid var(--color-white);
+  }
+  & h5 {
+    margin-top: 15px;
+    @include heading(5);
+    & a {
+      color: var(--color-white);
+    }
+    margin-bottom: 5px;
+  }
+  & p {
+    @include interText($color: var(--color-white_gray));
+    opacity: 0.6;
+    & a {
+      color: var(--color-white);
+    }
+  }
+}

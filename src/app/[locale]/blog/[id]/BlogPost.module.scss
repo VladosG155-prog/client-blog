@@ -4,7 +4,56 @@
 .container {
   max-width: 836px;
   margin: 0 auto;
+}
+.category {
+  @include flex($justify: flex-start);
+  gap: 10px;
+  & h4 {
+    @include heading(4);
+  }
+}
+.info {
+  margin-bottom: 65px;
+  & h1 {
+    @include heading(1);
+    line-height: 64px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+  }
+}
+.readNext {
+  margin-top: 120px;
   & h2 {
     @include heading(2);
+    margin-bottom: 65px;
+  }
+}
+.wrapper {
+  @include flex;
+  gap: 35px;
+}
+.textBlock {
+  margin-top: 65px;
+  & h2 {
+    @include heading(2);
+    line-height: 48px;
+    margin-bottom: 16px;
+  }
+  & p {
+    @include interText;
+  }
+}
+.image {
+  margin-left: calc(-50vw + 50% + 80px);
+  width: 90vw;
+  @include tablet {
+    width: 100%;
+    margin-left: 0px;
+  }
+  & img {
+    width: 100%;
+    @include tablet {
+      height: auto;
+    }
   }
 }

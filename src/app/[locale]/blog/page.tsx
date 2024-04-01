@@ -1,28 +1,41 @@
+import { getAllPosts } from 'api'
+
 import { TaggedPost } from '@/app/components/entities/Post/TaggedPost'
 import { CategoriesList } from '@/app/components/shared/CategoriesList'
 import { JoinUs } from '@/app/components/shared/JoinUs'
 
 import { BlogBanner } from './components/Banner'
-import { posts } from './config'
+import { Pagination } from './components/Pagination'
 
 import styles from './page.module.scss'
 
-const Blog = () => {
+const Blog = async ({ searchParams }: { searchParams: { page: string } }) => {
+  const posts = await getAllPosts({ page: searchParams.page, category: '', tags: undefined })
+
+  console.log('@posts', posts)
+
+  const data = posts.data || posts
+
   return (
     <div>
       <BlogBanner />
       <section className={styles.posts}>
-        <h1>All posts</h1>
+        <h1 id='posts'>All posts</h1>
         <hr />
+        <div></div>
         <div>
-          {posts.map(({ id, imageUrl, title, description, tag }) => (
-            <TaggedPost key={id} imageUrl={imageUrl} title={title} description={description} tag={tag} />
+          {data.map(({ id, image, title, description, category }) => (
+            <TaggedPost
+              key={id}
+              id={+id}
+              imageUrl={image}
+              title={title}
+              description={description}
+              category={category}
+            />
           ))}
         </div>
-        <div className={styles.nav}>
-          <button className={styles.prev}>{'<'}Prev</button>
-          <button className={styles.next}>Next{'>'}</button>
-        </div>
+        <Pagination hasNextPage={posts.next} hasPrevPage={posts.prev} />
       </section>
       <CategoriesList title='All Categories' />
       <JoinUs />

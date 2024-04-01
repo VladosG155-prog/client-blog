@@ -5,6 +5,11 @@
   background: var(--color-pink);
   margin-top: 128px;
   position: relative;
+  @include laptop {
+    padding: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
   & h2 {
     @include heading(2);
     line-height: 1.25;

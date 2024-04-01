@@ -1,4 +1,14 @@
 @import './reset';
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  @include laptop {
+    font-size: 14px;
+  }
+  @include tablet {
+    font-size: 12px;
+  }
+}
 
 body {
   font-family: var(--font-inter) !important;
@@ -12,14 +22,14 @@ a {
 }
 
 :root {
-  --text-size-0: 56px;
-  --text-size-1: 48px;
-  --text-size-2: 36px;
-  --text-size-3: 28px;
-  --text-size-4: 24px;
-  --text-size-5: 20px;
-  --text-size-6: 16px;
-  --text-size-7: 14px;
+  --text-size-0: 3.5rem;
+  --text-size-1: 3rem;
+  --text-size-2: 2.25rem;
+  --text-size-3: 1.75rem;
+  --text-size-4: 1.5rem;
+  --text-size-5: 1.25rem;
+  --text-size-6: 1rem;
+  --text-size-7: 0.875rem;
   --text-size-button: 18px;
   --color-yellow: #ffd050;
   --color-dark_blue: #232536;
@@ -37,4 +47,7 @@ a {
   width: calc(100% - 160px);
   padding: 0px 15px;
   margin: 0 auto;
+  @include laptop {
+    width: 95%;
+  }
 }

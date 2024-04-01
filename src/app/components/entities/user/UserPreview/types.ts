@@ -1,7 +1,6 @@
-import { StaticImageData } from 'next/image'
-
 export interface IUserPreviewProps {
-  imageUrl: StaticImageData
+  imageUrl: string
   name: string
   city: string
+  isPostPage?: boolean
 }

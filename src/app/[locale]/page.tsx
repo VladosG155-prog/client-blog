@@ -1,8 +1,8 @@
-import { CategoryCard } from '@components/entities/CategoryCard'
 import { Post } from '@components/entities/Post'
 import { ROUTES } from '@constants/routes'
 import Link from 'next/link'
 
+import { getAllUsers } from 'api'
 import { UserCard } from '@/app/components/entities/user/UserCard'
 import { CategoriesList } from '../components/shared/CategoriesList'
 import { JoinUs } from '../components/shared/JoinUs'
@@ -11,11 +11,13 @@ import { About } from './components/about'
 import { Banner } from './components/banner'
 import { Review } from './components/review'
 import { SpecialPost } from './components/specialPost'
-import { allPosts, authors, companies, featurePost } from './config'
+import { allPosts, companies, featurePost } from './config'
 
 import styles from './page.module.scss'
 
-export default function Home() {
+const Home = async () => {
+  const authors = await getAllUsers()
+
   return (
     <main className={styles.root}>
       <Banner />
@@ -52,8 +54,8 @@ export default function Home() {
       <section className={styles.authors}>
         <h2>List of Authors</h2>
         <div className={styles.wrapper}>
-          {authors.map(({ id, name, imageUrl, links, jobPosition }) => (
-            <UserCard key={id} name={name} imageUrl={imageUrl} links={links} jobPosition={jobPosition} />
+          {authors.map(({ id, name, avatar, links, job }) => (
+            <UserCard key={id} id={id} name={name} imageUrl={avatar} links={links} jobPosition={job} />
           ))}
         </div>
       </section>
@@ -72,3 +74,4 @@ export default function Home() {
     </main>
   )
 }
+export default Home

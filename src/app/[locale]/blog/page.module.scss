@@ -9,21 +9,4 @@
     height: 0px;
     border-bottom: 1px solid var(--color-light_gray);
   }
-  .nav {
-    @include flex($justify: center);
-    gap: 15px;
-    button {
-      border: none;
-      outline: none;
-      cursor: pointer;
-      background: none;
-    }
-    .prev {
-      @include heading(4);
-      color: var(--color-light_gray);
-    }
-    .next {
-      @include heading(3);
-    }
-  }
 }

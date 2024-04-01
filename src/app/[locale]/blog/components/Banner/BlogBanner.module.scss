@@ -7,12 +7,30 @@
   @include flex($align: center, $justify: flex-start);
 }
 .first {
+  width: 60%;
+  @include laptop {
+    width: 100%;
+  }
+}
+.second {
   width: 40%;
+  @include laptop {
+    width: 100%;
+    max-width: 400px;
+  }
 }
 .container {
-  @include container;
   color: var(--color-dark);
   @include flex;
+  gap: 30px;
+  padding: 0px 70px;
+  @include laptop {
+    flex-direction: column-reverse;
+  }
+  & img {
+    width: 100%;
+    height: auto;
+  }
   & h1 {
     @include heading(0);
     line-height: 1.25;

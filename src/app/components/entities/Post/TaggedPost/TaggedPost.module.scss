@@ -1,9 +1,23 @@
 .root {
   @include flex;
   margin-bottom: 65px;
+  & img {
+    width: 100%;
+    max-width: 490px;
+    max-height: 320px;
+    height: auto;
+    object-fit: cover;
+  }
+  @include laptop {
+    gap: 20px;
+    flex-direction: column;
+  }
 }
 .info {
   margin-left: 30px;
+  @include laptop {
+    margin-left: 0px;
+  }
   & p {
     @include interText;
     &.tag {
@@ -15,6 +29,7 @@
 
   h2 {
     @include heading(2);
+    color: var(--color-dark_blue);
     margin-top: 20px;
     letter-spacing: 1.33;
     margin-bottom: 16px;

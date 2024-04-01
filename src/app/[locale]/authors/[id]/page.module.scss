@@ -1,0 +1,70 @@
+.banner {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: var(--color-pink);
+  height: 550px;
+  text-align: center;
+  position: relative;
+  @include flex($justify: center, $align: center);
+  @include tablet {
+    flex-direction: column;
+  }
+  gap: 30px;
+  & img {
+    object-fit: cover;
+  }
+  .text {
+    max-width: 650px;
+    text-align: start;
+  }
+  & h2 {
+    @include heading(2);
+  }
+  & p {
+    @include interText;
+    margin-top: 16px;
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+      margin-top: 0px;
+      letter-spacing: 3px;
+      color: var(--color-dark_blue);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+}
+.lines {
+  width: 70%;
+  height: 23px;
+  @include flex;
+  position: absolute;
+  left: 17%;
+  bottom: 1px;
+  @include tablet {
+    bottom: -20px;
+    left: 30px;
+  }
+  & div:first-child {
+    width: 70%;
+    display: block;
+    height: 100%;
+    background: var(--color-yellow);
+  }
+  & div:last-child {
+    width: 30%;
+    display: block;
+    height: 100%;
+    background: var(--color-purple);
+  }
+}
+.root {
+}
+.posts {
+  margin-top: 120px;
+  & h1 {
+    @include heading(1);
+    margin-bottom: 65px;
+  }
+}

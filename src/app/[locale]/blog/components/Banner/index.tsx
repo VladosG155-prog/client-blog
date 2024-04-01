@@ -25,7 +25,9 @@ export const BlogBanner = () => {
           </p>
           <Button variant='primary'>Read More {'>'} </Button>
         </div>
-        <Image src={blogBanner} alt='blog-image' />
+        <div className={styles.second}>
+          <Image src={blogBanner} alt='blog-image' />
+        </div>
       </div>
     </div>
   )

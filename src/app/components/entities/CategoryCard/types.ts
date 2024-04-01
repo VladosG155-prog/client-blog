@@ -4,4 +4,6 @@ export interface ICategoryCardProps {
   title: string
   description: string
   iconName: keyof typeof iconNames
+  isSmallCard?: boolean
+  isActiveCard?: boolean
 }

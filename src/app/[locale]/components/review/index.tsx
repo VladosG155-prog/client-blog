@@ -42,7 +42,7 @@ export const Review = () => {
                 activeSlide === id && (
                   <div key={id} className={classNames(styles.slideItem, { [styles.active]: activeSlide === id })}>
                     <h4 className={styles.slideText}>{text}</h4>
-                    <UserPreview imageUrl={imageUrl} name={name} city={city} />
+                    <UserPreview imageUrl={imageUrl.src} name={name} city={city} />
                   </div>
                 )
             )}
@@ -51,7 +51,7 @@ export const Review = () => {
             <button onClick={handleClickPrev} className={styles.prev}>
               <Icon name='prevArrow' />
             </button>
-            <button onClick={handleClickNext}>
+            <button className={styles.disabledArrow} onClick={handleClickNext}>
               <Icon name='nextArrow' />
             </button>
           </div>
