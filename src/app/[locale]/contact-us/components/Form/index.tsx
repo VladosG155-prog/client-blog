@@ -1,14 +1,14 @@
 'use client'
-import 'mapbox-gl/dist/mapbox-gl.css'
-
-import { Map, Marker } from 'react-map-gl'
+import { ChangeEvent, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { Map, Marker } from 'react-map-gl'
+import { object, string } from 'yup'
+
 import { Button } from '@/app/components/ui/Button'
 import { Icon } from '@/app/components/ui/Icon'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 import styles from './Form.module.scss'
-import { ChangeEvent, useState } from 'react'
-import { object, string } from 'yup'
 
 const schema = object({
   from_name: string(),

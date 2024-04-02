@@ -1,11 +1,13 @@
+'use client'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
+import { MotionDiv } from '@/app/components/shared/Motion'
 import { Button } from '@/app/components/ui/Button'
 
 import styles from './SpecialPost.module.scss'
 
 import specialPng from '@assets/special.png'
-import { useTranslations } from 'next-intl'
 
 export const SpecialPost = () => {
   const t = useTranslations()
@@ -15,7 +17,12 @@ export const SpecialPost = () => {
       <div className={styles.image}>
         <Image src={specialPng} alt='specialPost' />
       </div>
-      <div className={styles.info}>
+      <MotionDiv
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className={styles.info}
+      >
         <h5>{t('why we started')}</h5>
         <h1>{t('It started out as a simple idea and evolved into our passion')}</h1>
         <p>
@@ -25,7 +32,7 @@ export const SpecialPost = () => {
         <Button variant='primary'>
           {t('Discover our story')} {'>'}
         </Button>
-      </div>
+      </MotionDiv>
     </div>
   )
 }

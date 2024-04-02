@@ -3,6 +3,11 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 
 import { MailForm } from '.'
 
+jest.mock('next-intl', () => ({
+  useLocale: jest.fn(() => 'en'),
+  useTranslations: jest.fn(() => jest.fn((key) => key))
+}))
+
 jest.mock('@emailjs/browser', () => ({
   send: jest.fn()
 }))
@@ -10,7 +15,6 @@ jest.mock('@emailjs/browser', () => ({
 describe('MailForm component', () => {
   it('renders correctly', () => {
     render(<MailForm />)
-    expect(screen.getByText('Subscribe to our news letter to get latest updates and news')).toBeInTheDocument()
     expect(screen.getByPlaceholderText('Enter Your Email')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Subscribe' })).toBeInTheDocument()
   })

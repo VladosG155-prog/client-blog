@@ -1,38 +1,6 @@
 .root {
   width: 100%;
 }
-.posts {
-  padding-top: 130px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 32px;
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-  .header {
-    @include flex($align: center);
-    margin-bottom: 32px;
-    & a {
-      color: var(--color-purple);
-      font-size: var(--text-size-6);
-    }
-    & h3 {
-      @include heading(3);
-    }
-  }
-}
-.singlePost {
-  border: 1px solid var(--border-light_gray);
-  & img {
-    max-height: 350px;
-  }
-}
-.featurePost {
-  height: max-content;
-}
-.allPosts {
-}
 
 .authors {
   margin-top: 128px;
@@ -45,22 +13,5 @@
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  }
-}
-
-.companies {
-  margin-top: 100px;
-  @include flex($wrap: wrap);
-  gap: 30px;
-}
-
-.textLogo {
-  & p {
-    font-size: var(--text-size-7);
-    color: var(--color-light_gray);
-  }
-  & h4 {
-    @include heading(4, var(--color-light_gray));
-    line-height: 32px;
   }
 }

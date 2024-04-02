@@ -1,5 +1,6 @@
-import { getAllPosts } from '@/api'
+import { getTranslations } from 'next-intl/server'
 
+import { getAllPosts } from '@/api'
 import { TaggedPost } from '@/app/components/entities/Post/TaggedPost'
 import { CategoriesList } from '@/app/components/shared/CategoriesList'
 import { JoinUs } from '@/app/components/shared/JoinUs'
@@ -14,11 +15,13 @@ const Blog = async ({ searchParams }: { searchParams: { page: string } }) => {
 
   const data = posts.data
 
+  const t = await getTranslations()
+
   return (
     <div>
       <BlogBanner />
       <section className={styles.posts}>
-        <h1 id='posts'>All posts</h1>
+        <h1 id='posts'>{t('All posts')}</h1>
         <hr />
         <div></div>
         <div>

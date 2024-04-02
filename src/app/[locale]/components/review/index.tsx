@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 
 import { UserPreview } from '@/app/components/entities/user/UserPreview'
 import { Icon } from '@/app/components/ui/Icon'
@@ -8,7 +9,6 @@ import { Icon } from '@/app/components/ui/Icon'
 import { slides } from './config'
 
 import styles from './Review.module.scss'
-import { useTranslations } from 'next-intl'
 
 export const Review = () => {
   const [activeSlide, setActiveSlide] = useState(1)

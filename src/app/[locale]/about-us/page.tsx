@@ -1,10 +1,10 @@
-import { getAllUsers } from '@/api'
 import Image from 'next/image'
-
+import { getAllUsers } from '@/api'
 import { UserCard } from '@/app/components/entities/user/UserCard'
 import { JoinUs } from '@/app/components/shared/JoinUs'
+import { MotionDiv, MotionSection } from '@/app/components/shared/Motion'
 
-import { MotionDiv, MotionSection } from './MotionWrapper'
+import { Counter } from './components/Counter'
 
 import styles from './AboutUs.module.scss'
 
@@ -19,6 +19,7 @@ const variants = {
 
 const AboutUs = async () => {
   const authors = await getAllUsers()
+
   return (
     <div className={styles.root}>
       <div className={styles.header}>
@@ -42,15 +43,23 @@ const AboutUs = async () => {
         <Image src={aboutImage} alt='about-us-overview' />
         <div className={styles.stats}>
           <div>
-            <h1>12+</h1>
+            <h1>
+              <Counter count={12} />+
+            </h1>
             <p>Blogs Published</p>
           </div>
           <div>
-            <h1>18K+</h1>
+            <h1>
+              <Counter count={18} />
+              K+
+            </h1>
             <p>Views on Finsweet</p>
           </div>
           <div>
-            <h1>30K+</h1>
+            <h1>
+              <Counter count={30} />
+              K+
+            </h1>
             <p>Total active Users</p>
           </div>
         </div>

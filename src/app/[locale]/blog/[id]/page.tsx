@@ -1,6 +1,6 @@
-import { getPostById } from '@/api'
 import Image from 'next/image'
 
+import { getPostById } from '@/api'
 import { Post } from '@/app/components/entities/Post'
 import { UserPreview } from '@/app/components/entities/user/UserPreview'
 import { JoinUs } from '@/app/components/shared/JoinUs'

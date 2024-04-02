@@ -1,6 +1,12 @@
 import { render, screen } from '@testing-library/react'
+import { NextIntlClientProvider } from 'next-intl'
 
 import { Post } from '.'
+
+jest.mock('next-intl', () => ({
+  useLocale: jest.fn(() => 'en'),
+  useTranslations: jest.fn(() => jest.fn((key) => key))
+}))
 
 describe('Post component', () => {
   const mockPost = {

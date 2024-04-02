@@ -1,12 +1,12 @@
 'use client'
 import { ChangeEvent, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { useTranslations } from 'next-intl'
 import { object, string } from 'yup'
 
 import { Button } from '@/app/components/ui/Button'
 
 import styles from './MailForm.module.scss'
-import { useTranslations } from 'next-intl'
 
 const schema = object({
   user_email: string().email()

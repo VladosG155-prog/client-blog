@@ -1,17 +1,17 @@
 import { getAllPosts } from '@/api'
-
 import { TaggedPost } from '@/app/components/entities/Post/TaggedPost'
+import { Pagination } from '../blog/components/Pagination'
 
 import { SideBar } from './components/SideBar'
 
 import styles from './page.module.scss'
 
-const Category = async ({ searchParams }: { searchParams: { val: string; tags: string[] | string } }) => {
+const Category = async ({ searchParams }: { searchParams: { val: string; tags: string[] | string; page: string } }) => {
   const selectedCategory = searchParams.val ?? 'All'
 
   const posts = await getAllPosts({
     category: selectedCategory === 'All' ? '' : searchParams.val,
-    page: '1',
+    page: searchParams.page,
     tags: Array.isArray(searchParams.tags) ? searchParams.tags : [searchParams.tags]
   })
 
@@ -26,7 +26,7 @@ const Category = async ({ searchParams }: { searchParams: { val: string; tags: s
           Blog {'>'} {selectedCategory}
         </p>
       </div>
-      <div className={styles.wrapper}>
+      <div id='#posts' className={styles.wrapper}>
         {data.length > 0 ? (
           <div className={styles.items}>
             {data.map(({ id, image, title, description, category }) => (
@@ -39,6 +39,7 @@ const Category = async ({ searchParams }: { searchParams: { val: string; tags: s
                 category={category}
               />
             ))}
+            <Pagination hasNextPage={posts.hasNext} hasPrevPage={posts.hasPrev} />
           </div>
         ) : (
           <h2>Thit category doesn{"'"}t have posts yet</h2>

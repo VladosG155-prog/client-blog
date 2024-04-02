@@ -8,10 +8,10 @@ const createJestConfig = nextJest({
 const config: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts', '<rootDir>/__mocks__/mocks.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^.+\\.(svg)$': '<rootDir>/src/svg.ts'
+    '^.+\\.(svg)$': '<rootDir>/__mocks__/svg.ts'
   },
   transform: {
     '^.+\\.(svg)$': 'jest-transformer-svg'

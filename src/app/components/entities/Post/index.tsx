@@ -3,11 +3,13 @@ import { Button } from '@components/ui/Button'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+
+import { ROUTES } from '@/app/constants/routes'
 
 import { IPostProps } from './types'
 
 import styles from './Post.module.scss'
-import { ROUTES } from '@/app/constants/routes'
 
 export const Post: FC<IPostProps> = ({
   title,
@@ -18,6 +20,8 @@ export const Post: FC<IPostProps> = ({
   isPreviewPost = false,
   size = 'lg'
 }) => {
+  const t = useTranslations()
+
   return (
     <div
       className={classNames(styles.root, {
@@ -33,7 +37,9 @@ export const Post: FC<IPostProps> = ({
       {!isPreviewPost && <p className={styles.description}>{description}</p>}
       {!isPreviewPost && size === 'lg' && (
         <Button variant='primary'>
-          <Link href={ROUTES.BLOG + '/' + 1}>Read More {'>'} </Link>
+          <Link href={ROUTES.BLOG + '/' + 1}>
+            {t('Read more')} {'>'}{' '}
+          </Link>
         </Button>
       )}
     </div>

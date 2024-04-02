@@ -2,10 +2,12 @@ import { render, screen } from '@testing-library/react'
 
 import { Header } from '.'
 
-// Mock useRouter and useLocale
 jest.mock('@/navigation', () => ({
   useRouter: jest.fn(),
-  usePathname: jest.fn(() => '/mock-pathname')
+  usePathname: jest.fn(() => '/mock-pathname'),
+  useParams: jest.fn(() => {
+    locale: 'mock'
+  })
 }))
 jest.mock('next-intl', () => ({
   useLocale: jest.fn(() => 'en'),

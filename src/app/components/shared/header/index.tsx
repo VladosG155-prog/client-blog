@@ -1,17 +1,17 @@
 'use client'
 import { useState, useTransition } from 'react'
 import { Button } from '@components/ui/Button'
+import classNames from 'classnames'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { Modal } from '@/app/components/ui/Modal'
 import { ROUTES } from '@/app/constants/routes'
+import { useMediaQuery } from '@/app/hooks/useMediaQuery'
 import { usePathname, useRouter } from '@/navigation'
 
 import styles from './Header.module.scss'
-import { useMediaQuery } from '@/app/hooks/useMediaQuery'
-import classNames from 'classnames'
 
 export const Header = () => {
   const t = useTranslations('header')
@@ -75,7 +75,7 @@ export const Header = () => {
               {t('Video about us')}
             </Button>
             <span onClick={onChangeLocale} className={styles.locale}>
-              {params.locale}
+              {params?.locale}
             </span>
           </div>
         </div>
