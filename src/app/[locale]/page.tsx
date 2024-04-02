@@ -4,13 +4,13 @@ import { getAllUsers } from '@/api'
 import { UserCard } from '@/app/components/entities/user/UserCard'
 import { CategoriesList } from '../components/shared/CategoriesList'
 import { JoinUs } from '../components/shared/JoinUs'
+import { MotionSection } from '../components/shared/Motion'
+import withLazyLoad from '../hocs/withLazyLoad'
 
 import { About, Banner, Posts, Review, SpecialPost } from './components/'
+import { Companies } from './components/companies'
 
 import styles from './page.module.scss'
-import withLazyLoad from '../hocs/withLazyLoad'
-import { Companies } from './components/companies'
-import { MotionSection } from '../components/shared/Motion'
 
 const LazyPosts = withLazyLoad(Posts)
 const LazyAbout = withLazyLoad(About)

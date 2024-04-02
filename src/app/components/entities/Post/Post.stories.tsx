@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Post } from '.'
 
+import { IPostProps } from './types'
+
 const meta = {
   title: 'Entities/Post',
   component: Post,
@@ -17,14 +19,14 @@ const meta = {
 
 export default meta
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<IPostProps>
 
 export const Primary: Story = {
   args: {
-    createdBy: 'John Doe'
-  },
-  title:
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur veritatis ratione dicta aliquam quas nemo alias maxime reprehenderit omnis explicabo delectus quasi, perferendis pariatur sequi consequatur dignissimos impedit cum iure!'
+    createdBy: 'John Doe',
+    title:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur veritatis ratione dicta aliquam quas nemo alias maxime reprehenderit omnis explicabo delectus quasi, perferendis pariatur sequi consequatur dignissimos impedit cum iure!'
+  }
 }
 export const Preview: Story = {
   args: {

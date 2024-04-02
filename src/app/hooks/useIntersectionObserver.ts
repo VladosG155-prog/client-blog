@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState, useRef, RefObject } from 'react'
+import { RefObject, useEffect, useRef, useState } from 'react'
 
 const useIntersectionObserver = (threshold = 0): [boolean, RefObject<HTMLDivElement>] => {
   const [isIntersecting, setIsIntersecting] = useState(false)
