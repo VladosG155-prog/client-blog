@@ -1,0 +1,17 @@
+.root {
+  width: 100%;
+}
+
+.authors {
+  margin-top: 128px;
+  & h2 {
+    @include heading(2);
+    text-align: center;
+  }
+  .wrapper {
+    gap: 32px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}

@@ -1,0 +1,12 @@
+.posts {
+  margin-top: 64px;
+  & h1 {
+    @include heading(1);
+  }
+  & hr {
+    margin-top: 32px;
+    margin-bottom: 64px;
+    height: 0px;
+    border-bottom: 1px solid var(--color-light_gray);
+  }
+}

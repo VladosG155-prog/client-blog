@@ -1,0 +1,32 @@
+.banner {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: var(--color-pink);
+  height: 350px;
+  text-align: center;
+  @include flex($justify: center, $align: center, $direction: column);
+  & h1 {
+    @include heading(1);
+  }
+  & p {
+    @include interText;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    width: 450px;
+    &:last-child {
+      margin-bottom: 0;
+      margin-top: 0px;
+      letter-spacing: 3px;
+      color: var(--color-dark_blue);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+}
+
+.wrapper {
+  padding-top: 120px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 3fr 1fr;
+}

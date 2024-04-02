@@ -1,0 +1,28 @@
+.root {
+  @include flex($direction: column);
+  width: 100%;
+  gap: 15px;
+  & p {
+    color: red;
+  }
+  & input {
+    width: 100%;
+    padding: 25px;
+    @include interText;
+  }
+  & textarea {
+    width: 100%;
+    padding: 25px;
+    @include interText;
+    height: 145px;
+  }
+}
+.map {
+  margin-top: 70px;
+  height: 500px;
+  width: 100vw;
+  margin-bottom: -120px;
+  @include tablet {
+    height: 250px;
+  }
+}

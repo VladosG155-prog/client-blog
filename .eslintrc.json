@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "plugin:storybook/recommended"],
+  "plugins": ["simple-import-sort"],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              ["^react$", "^@?\\w"],
+              ["^@", "^"],
+              ["^\\./"],
+              ["^.+\\.(module.css|module.scss|.scss)$"],
+              ["^.+\\.(gif|png|svg|jpg)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

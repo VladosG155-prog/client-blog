@@ -1,0 +1,36 @@
+.root {
+  background: var(--color-dark_blue);
+  padding: 50px;
+  margin-top: 120px;
+}
+.footerFirst {
+  @include flex();
+  @include tablet {
+    flex-direction: column;
+    gap: 15px;
+  }
+  h4 {
+    @include heading(4);
+    color: var(--color-white);
+  }
+  nav {
+    @include flex($justify: flex-start);
+    gap: 25px;
+    & a {
+      @include interText($color: var(--color-white));
+      text-decoration: none;
+    }
+  }
+}
+.footerEnd {
+  margin-top: 60px;
+  @include flex;
+  @include interText;
+}
+.social {
+  @include flex;
+  gap: 25px;
+  svg path {
+    fill: var(--color-light_gray);
+  }
+}

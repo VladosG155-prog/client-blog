@@ -1,0 +1,61 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 80px 96px;
+  background: var(--color-pink);
+  margin-top: 128px;
+  position: relative;
+  @include laptop {
+    padding: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  & h2 {
+    @include heading(2);
+    line-height: 1.25;
+  }
+  & h3 {
+    @include heading(3);
+    line-height: 1.5;
+  }
+  & h5 {
+    font-family: var(--font-inter);
+    font-weight: 600;
+    font-size: var(--text-size-6);
+    letter-spacing: 3px;
+    color: var(--color-dark_blue);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  & p {
+    @include interText;
+    margin-top: 16px;
+    line-height: 28px;
+  }
+  & a {
+    margin-top: 16px;
+    font-family: var(--font-sen);
+    color: var(--color-purple);
+    font-weight: 700;
+  }
+  .lines {
+    width: 70%;
+    height: 23px;
+    @include flex;
+    position: absolute;
+    right: 0;
+    top: -22px;
+    & div:first-child {
+      width: 70%;
+      display: block;
+      height: 100%;
+      background: var(--color-yellow);
+    }
+    & div:last-child {
+      width: 30%;
+      display: block;
+      height: 100%;
+      background: var(--color-purple);
+    }
+  }
+}

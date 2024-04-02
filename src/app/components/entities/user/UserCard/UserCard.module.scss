@@ -1,0 +1,42 @@
+.root {
+  background: var(--color-white_gray);
+  position: relative;
+  padding: 40px 30px;
+  @include flex($justify: center, $align: center, $direction: column);
+  max-width: 300px;
+  height: 325px;
+  transition: 0.3s all ease-in;
+  @include phone-600 {
+    max-width: 100%;
+    width: 100%;
+  }
+  &:hover {
+    background: var(--color-light_yellow);
+  }
+  & .avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 100%;
+    & img {
+      border-radius: 100%;
+    }
+  }
+  & h3 {
+    margin-top: 20px;
+    @include heading(3);
+  }
+  & p {
+    @include interText;
+  }
+}
+.links {
+  margin-top: 20px;
+  @include flex;
+  gap: 15px;
+}
+.cardLink {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  top: 0;
+}

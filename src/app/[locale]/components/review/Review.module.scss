@@ -1,0 +1,103 @@
+.root {
+  background: var(--color-light_yellow);
+  padding: 80px;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  @include laptop() {
+    padding: 50px;
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  & img {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+  }
+  .firstSection {
+    border-right: 1px solid var(--color-light_gray);
+    margin-right: -10px;
+    @include laptop() {
+      border-right: none;
+      margin-right: 0px;
+    }
+    & h5 {
+      @include interText($color: var(--color-dark_blue));
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    & h2 {
+      @include heading(2, $color: var(--color-dark_blue));
+      line-height: 48px;
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+    & p {
+      @include interText;
+    }
+  }
+  .secondSection {
+    padding-left: 96px;
+    overflow: hidden;
+    @include laptop() {
+      padding-left: 0px;
+    }
+    & .slideText {
+      @include heading(4);
+      line-height: 32px;
+      flex: 1 0;
+      max-height: 130px;
+      text-overflow: ellipsis;
+
+      overflow: hidden;
+    }
+  }
+}
+.slider {
+  position: relative;
+}
+.slideItem {
+  transition: 0.3s all ease;
+  opacity: 0;
+  height: 300px;
+  animation: fadeIn 1s;
+  @include laptop {
+    height: 200px;
+  }
+  @include flex($direction: column, $align: flex-start);
+  &.active {
+    opacity: 1;
+  }
+}
+.wrapper {
+  @include flex($direction: column);
+}
+.navigation {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  @include flex;
+  gap: 25px;
+  @include phone-600 {
+    position: unset;
+    justify-content: center;
+  }
+  & button {
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0px;
+    cursor: pointer;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

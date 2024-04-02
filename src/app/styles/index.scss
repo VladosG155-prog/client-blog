@@ -1,0 +1,57 @@
+@import './reset';
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  @include laptop {
+    font-size: 14px;
+  }
+  @include tablet {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: var(--font-inter) !important;
+  position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --text-size-0: 3.5rem;
+  --text-size-1: 3rem;
+  --text-size-2: 2.25rem;
+  --text-size-3: 1.75rem;
+  --text-size-4: 1.5rem;
+  --text-size-5: 1.25rem;
+  --text-size-6: 1rem;
+  --text-size-7: 0.875rem;
+  --text-size-button: 18px;
+  --color-yellow: #ffd050;
+  --color-dark_blue: #232536;
+  --color-purple: #592ea9;
+  --color-gray: #4c4c4c;
+  --color-light_gray: #6d6e76;
+  --color-white_gray: #f4f4f4;
+  --color-pink: #f4f0f8;
+  --color-light_yellow: #fbf6ea;
+  --color-white: #ffffff;
+  --border-light_gray: #f5f5f5;
+}
+
+.container {
+  width: calc(100% - 160px);
+  padding: 0px 15px;
+  margin: 0 auto;
+  @include laptop {
+    width: 95%;
+  }
+}
+
+a {
+  color: inherit;
+}
