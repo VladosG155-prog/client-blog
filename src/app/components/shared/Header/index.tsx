@@ -64,17 +64,25 @@ export const Header = () => {
       )}
       {((isTablet && isOpenBurger) || !isTablet) && (
         <div className={styles.headerEnd}>
-          <nav className={styles.nav}>
-            <Link href={ROUTES.HOME}>{t('Home')}</Link>
-            <Link href={ROUTES.BLOG}>{t('Blog')}</Link>
-            <Link href={ROUTES.ABOUT_US}>{t('About_us')}</Link>
-            <Link href={ROUTES.CONTACT_US}>{t('Contact_us')}</Link>
+          <nav data-testid='navigation' className={styles.nav}>
+            <Link data-testid='navigation-home' href={ROUTES.HOME}>
+              {t('Home')}
+            </Link>
+            <Link data-testid='navigation-blog' href={ROUTES.BLOG}>
+              {t('Blog')}
+            </Link>
+            <Link data-testid='navigation-about_us' href={ROUTES.ABOUT_US}>
+              {t('About_us')}
+            </Link>
+            <Link data-testid='navigation-contact' href={ROUTES.CONTACT_US}>
+              {t('Contact_us')}
+            </Link>
           </nav>
           <div>
             <Button variant='white' onClick={onToggleModal}>
               {t('Video about us')}
             </Button>
-            <span onClick={onChangeLocale} className={styles.locale}>
+            <span data-testid='locale-button' onClick={onChangeLocale} className={styles.locale}>
               {params?.locale}
             </span>
           </div>

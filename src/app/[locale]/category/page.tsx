@@ -20,7 +20,7 @@ const Category = async ({ searchParams }: { searchParams: { val: string; tags: s
   return (
     <div className={styles.root}>
       <div className={styles.banner}>
-        <h1>{selectedCategory}</h1>
+        <h1 data-testid='category-name'>{selectedCategory}</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
         <p>
           Blog {'>'} {selectedCategory}

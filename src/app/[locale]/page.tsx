@@ -1,7 +1,10 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 import { getAllUsers } from '@/api'
 import { UserCard } from '@/app/components/entities/user/UserCard'
+import { IUser } from '@/types'
 import { CategoriesList } from '../components/shared/CategoriesList'
 import { JoinUs } from '../components/shared/JoinUs'
 import { MotionSection } from '../components/shared/Motion'
@@ -19,8 +22,15 @@ const LazySpecialPost = withLazyLoad(SpecialPost)
 const LazyCompanies = withLazyLoad(Companies)
 const LazyReview = withLazyLoad(Review)
 const LazyJoinUs = withLazyLoad(JoinUs)
-const Home = async () => {
-  const authors = await getAllUsers()
+
+const Home = () => {
+  const [authors, setAuthors] = useState<IUser[]>([])
+
+  useEffect(() => {
+    getAllUsers().then((data) => {
+      setAuthors(data)
+    })
+  }, [])
 
   return (
     <main className={styles.root}>

@@ -59,6 +59,5 @@
     "storybook-addon-next": "^1.8.0",
     "typescript": "^5",
     "url-loader": "^4.1.1"
-  },
-  "packageManager": "yarn@4.1.1"
+  }
 }

@@ -1,9 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "plugin:storybook/recommended"],
   "plugins": ["simple-import-sort"],
-  "parserOptions": {
-    "project": ["./tsconfig.json"]
-  },
+  "parserOptions": {},
   "rules": {
     "react/display-name": "off"
   },
