@@ -11,7 +11,7 @@ import specialPng from '@assets/special.png'
 
 export const SpecialPost = () => {
   const t = useTranslations()
-
+  console.log('@agaga')
   return (
     <div className={styles.root}>
       <div className={styles.image}>

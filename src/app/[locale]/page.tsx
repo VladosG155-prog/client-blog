@@ -4,15 +4,14 @@ import { getAllUsers } from '@/api'
 import { UserCard } from '@/app/components/entities/user/UserCard'
 import { CategoriesList } from '../components/shared/CategoriesList'
 import { JoinUs } from '../components/shared/JoinUs'
-import { MotionSection } from '../components/shared/Motion'
 
 import { About, Banner, Posts, Review, SpecialPost } from './components/'
 
 import styles from './page.module.scss'
 import withLazyLoad from '../hocs/withLazyLoad'
 import { Companies } from './components/companies'
+import { MotionSection } from '../components/shared/Motion'
 
-const LazyBanner = withLazyLoad(Banner)
 const LazyPosts = withLazyLoad(Posts)
 const LazyAbout = withLazyLoad(About)
 const LazyCategories = withLazyLoad(CategoriesList)
@@ -25,7 +24,7 @@ const Home = async () => {
 
   return (
     <main className={styles.root}>
-      <LazyBanner />
+      <Banner />
       <LazyPosts />
       <LazyAbout />
       <LazyCategories align='center' title='Choose A Catagory' />
