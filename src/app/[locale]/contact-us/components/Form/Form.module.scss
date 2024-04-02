@@ -2,6 +2,9 @@
   @include flex($direction: column);
   width: 100%;
   gap: 15px;
+  & p {
+    color: red;
+  }
   & input {
     width: 100%;
     padding: 25px;
@@ -19,4 +22,7 @@
   height: 500px;
   width: 100vw;
   margin-bottom: -120px;
+  @include tablet {
+    height: 250px;
+  }
 }

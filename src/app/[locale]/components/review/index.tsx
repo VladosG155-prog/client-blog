@@ -8,9 +8,12 @@ import { Icon } from '@/app/components/ui/Icon'
 import { slides } from './config'
 
 import styles from './Review.module.scss'
+import { useTranslations } from 'next-intl'
 
 export const Review = () => {
   const [activeSlide, setActiveSlide] = useState(1)
+
+  const t = useTranslations('slider')
 
   const handleClickNext = () => {
     if (activeSlide === slides.length) {
@@ -30,8 +33,8 @@ export const Review = () => {
   return (
     <section className={styles.root}>
       <div className={styles.firstSection}>
-        <h5>Testimonials</h5>
-        <h2>What people say about our blog</h2>
+        <h5>{t('review')}</h5>
+        <h2>{t('what_say')}</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
       </div>
       <div className={styles.secondSection}>

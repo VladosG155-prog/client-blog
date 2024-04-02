@@ -1,4 +1,4 @@
-import { getPostById } from 'api'
+import { getPostById } from '@/api'
 import Image from 'next/image'
 
 import { Post } from '@/app/components/entities/Post'

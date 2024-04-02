@@ -70,9 +70,14 @@ export const Header = () => {
             <Link href={ROUTES.ABOUT_US}>{t('About_us')}</Link>
             <Link href={ROUTES.CONTACT_US}>{t('Contact_us')}</Link>
           </nav>
-          <Button variant='white' onClick={onToggleModal}>
-            {t('Video about us')}
-          </Button>
+          <div>
+            <Button variant='white' onClick={onToggleModal}>
+              {t('Video about us')}
+            </Button>
+            <span onClick={onChangeLocale} className={styles.locale}>
+              {params.locale}
+            </span>
+          </div>
         </div>
       )}
       {isShowModal && (

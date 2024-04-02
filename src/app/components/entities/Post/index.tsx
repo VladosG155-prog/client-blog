@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { IPostProps } from './types'
 
 import styles from './Post.module.scss'
+import { ROUTES } from '@/app/constants/routes'
 
 export const Post: FC<IPostProps> = ({
   title,
@@ -30,7 +31,11 @@ export const Post: FC<IPostProps> = ({
       </p>
       <h3>{title}</h3>
       {!isPreviewPost && <p className={styles.description}>{description}</p>}
-      {!isPreviewPost && size === 'lg' && <Button variant='primary'>Read More {'>'} </Button>}
+      {!isPreviewPost && size === 'lg' && (
+        <Button variant='primary'>
+          <Link href={ROUTES.BLOG + '/' + 1}>Read More {'>'} </Link>
+        </Button>
+      )}
     </div>
   )
 }

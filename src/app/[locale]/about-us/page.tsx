@@ -1,4 +1,4 @@
-import { getAllUsers } from 'api'
+import { getAllUsers } from '@/api'
 import Image from 'next/image'
 
 import { UserCard } from '@/app/components/entities/user/UserCard'

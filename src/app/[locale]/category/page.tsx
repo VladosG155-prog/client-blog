@@ -1,4 +1,4 @@
-import { getAllPosts } from 'api'
+import { getAllPosts } from '@/api'
 
 import { TaggedPost } from '@/app/components/entities/Post/TaggedPost'
 

@@ -1,4 +1,4 @@
-import { getAllPosts } from 'api'
+import { getAllPosts } from '@/api'
 
 import { TaggedPost } from '@/app/components/entities/Post/TaggedPost'
 import { CategoriesList } from '@/app/components/shared/CategoriesList'
@@ -12,9 +12,7 @@ import styles from './page.module.scss'
 const Blog = async ({ searchParams }: { searchParams: { page: string } }) => {
   const posts = await getAllPosts({ page: searchParams.page, category: '', tags: undefined })
 
-  console.log('@posts', posts)
-
-  const data = posts.data || posts
+  const data = posts.data
 
   return (
     <div>
@@ -35,7 +33,7 @@ const Blog = async ({ searchParams }: { searchParams: { page: string } }) => {
             />
           ))}
         </div>
-        <Pagination hasNextPage={posts.next} hasPrevPage={posts.prev} />
+        <Pagination hasNextPage={posts.hasNext} hasPrevPage={posts.hasPrev} />
       </section>
       <CategoriesList title='All Categories' />
       <JoinUs />

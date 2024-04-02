@@ -6,6 +6,7 @@ import { object, string } from 'yup'
 import { Button } from '@/app/components/ui/Button'
 
 import styles from './MailForm.module.scss'
+import { useTranslations } from 'next-intl'
 
 const schema = object({
   user_email: string().email()
@@ -13,8 +14,9 @@ const schema = object({
 
 export const MailForm = () => {
   const [email, setEmail] = useState('')
-
   const [error, setError] = useState('')
+
+  const t = useTranslations()
 
   const validate = async () => {
     try {
@@ -51,7 +53,7 @@ export const MailForm = () => {
 
   return (
     <div className={styles.root}>
-      <h2>Subscribe to our news letter to get latest updates and news</h2>
+      <h2>{t('footer')}</h2>
       <div className={styles.form}>
         <div className={styles.input}>
           <input type='email' name='email' value={email} onChange={handleChangeInput} placeholder='Enter Your Email' />

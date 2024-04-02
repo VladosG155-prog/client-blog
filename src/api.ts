@@ -1,4 +1,4 @@
-import { IPost, IPostResponse, IUser } from './src/types'
+import { IPost, IPostResponse, IUser } from './types'
 
 const baseUrl = 'https://api-json-server-mauve.vercel.app'
 
@@ -10,7 +10,7 @@ export const getAllPosts = async ({
   tags?: string[]
   page: string
   category: string
-}) => {
+}): Promise<IPostResponse> => {
   const queryByCategory = category.length > 0 ? `category=${category}` : ''
 
   let queryByTags = ''
@@ -20,18 +20,27 @@ export const getAllPosts = async ({
       queryByTags += `&tags_like=${tag}`
     })
   }
-  const pagination = `_page=${page}&_per_page=5`
+  const pagination = `_page=${page}&_limit=5`
 
-  const res = await fetch(`${baseUrl}/posts?${pagination}&${queryByCategory}${queryByTags || ''}`)
-  console.log(`${baseUrl}/posts?${pagination}${queryByCategory}${queryByTags || ''}`)
+  const res = await fetch(`${baseUrl}/posts?${pagination}&${queryByCategory}${queryByTags || ''}`, {
+    cache: 'no-store'
+  })
 
-  const posts: IPostResponse = await res.json()
+  const totalCount = res.headers.get('x-total-count')!
 
-  return posts
+  const totalPages = Math.ceil(+totalCount / 5)
+
+  const hasNext = +page < totalPages
+
+  const hasPrev = +page > 1
+
+  const posts: IPost[] = await res.json()
+
+  return { data: posts, hasNext, hasPrev }
 }
 
 export const getPostById = async (id: number) => {
-  const res = await fetch(`${baseUrl}/posts/${id}`)
+  const res = await fetch(`${baseUrl}/posts/${id}`, { next: { revalidate: 3600 } })
   const post: IPost = await res.json()
   const resUser = await fetch(`${baseUrl}/authors/${post.authorId}`)
 

@@ -15,12 +15,8 @@ export interface Links {
 }
 
 export interface IPostResponse {
-  first: number
-  prev: any
-  next: any
-  last: number
-  pages: number
-  items: number
+  hasNext: boolean
+  hasPrev: boolean
   data: IPost[]
 }
 

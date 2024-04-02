@@ -5,6 +5,10 @@
 }
 .footerFirst {
   @include flex();
+  @include tablet {
+    flex-direction: column;
+    gap: 15px;
+  }
   h4 {
     @include heading(4);
     color: var(--color-white);

@@ -2,7 +2,7 @@ import { Post } from '@components/entities/Post'
 import { ROUTES } from '@constants/routes'
 import Link from 'next/link'
 
-import { getAllUsers } from 'api'
+import { getAllUsers } from '@/api'
 import { UserCard } from '@/app/components/entities/user/UserCard'
 import { CategoriesList } from '../components/shared/CategoriesList'
 import { JoinUs } from '../components/shared/JoinUs'
@@ -33,7 +33,7 @@ const Home = async () => {
         <div className={styles.allPosts}>
           <div className={styles.header}>
             <h3>All Posts</h3>
-            <Link href={ROUTES.POSTS}>View All</Link>
+            <Link href={ROUTES.BLOG}>View All</Link>
           </div>
           {allPosts.map(({ id, title, description, createdBy, createdDate }) => (
             <Post

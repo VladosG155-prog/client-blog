@@ -2,19 +2,67 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 import { Map, Marker } from 'react-map-gl'
-
+import emailjs from '@emailjs/browser'
 import { Button } from '@/app/components/ui/Button'
 import { Icon } from '@/app/components/ui/Icon'
 
 import styles from './Form.module.scss'
+import { ChangeEvent, useState } from 'react'
+import { object, string } from 'yup'
+
+const schema = object({
+  from_name: string(),
+  email: string().email(),
+  query: string(),
+  message: string().max(150)
+})
+
 export const Form = () => {
+  const [formData, setFormData] = useState({})
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const [error, setError] = useState('')
+
+  const validate = async () => {
+    try {
+      await schema.validate({ ...formData })
+    } catch (error) {
+      throw new Error('Please enter a valid data')
+    }
+  }
+
+  const handleSendForm = async () => {
+    setError('')
+    try {
+      await validate()
+
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT as string,
+        { ...formData },
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        }
+      )
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message)
+        console.log(error)
+      }
+    }
+  }
+
   return (
     <div className={styles.root}>
-      <input type='text' placeholder='Full Name' />
-      <input type='text' placeholder='Your Email' />
-      <input type='text' placeholder='Query Related  ' />
-      <textarea placeholder='Message'></textarea>
-      <Button variant='primary' size='full'>
+      <input type='text' name='from_name' onChange={handleChange} placeholder='Full Name' />
+      <input type='text' name='email' onChange={handleChange} placeholder='Your Email' />
+      <input type='text' name='query' onChange={handleChange} placeholder='Query Related  ' />
+      <textarea name='message' onChange={handleChange} placeholder='Message'></textarea>
+      {error.length > 0 && <p>{error}</p>}
+      <Button variant='primary' onClick={handleSendForm} size='full'>
         Send Message
       </Button>
       <div className={styles.map}>

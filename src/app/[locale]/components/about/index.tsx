@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import styles from './About.module.scss'
+import { ROUTES } from '@/app/constants/routes'
 
 export const About = () => {
   return (
@@ -26,7 +27,7 @@ export const About = () => {
           consequat.
         </p>
       </div>
-      <Link href='/'>Read More {'>'}</Link>
+      <Link href={ROUTES.BLOG + '/' + '1'}>Read More {'>'}</Link>
     </div>
   )
 }
