@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { UserCard } from '.'
 
+import { IUserCardProps } from './types'
+
 const meta = {
   title: 'Entities/UserCard',
   component: UserCard,
@@ -13,7 +15,7 @@ const meta = {
 
 export default meta
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<IUserCardProps>
 
 export const Primary: Story = {
   args: {

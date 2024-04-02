@@ -1,5 +1,6 @@
 'use client'
 import { ComponentType, useEffect, useState } from 'react'
+
 import useIntersectionObserver from '@/app/hooks/useIntersectionObserver'
 const withLazyLoad = <P extends object>(WrappedComponent: ComponentType<P>, threshold = 0.5): React.FC<P> => {
   return (props: P) => {
@@ -10,6 +11,7 @@ const withLazyLoad = <P extends object>(WrappedComponent: ComponentType<P>, thre
         setHasLoaded(true)
       }
     }, [isInView, hasLoaded])
+    WrappedComponent.displayName = 'LazyLoad' + WrappedComponent.displayName
     return <div ref={ref}>{hasLoaded ? <WrappedComponent {...props} /> : <div>Loading...</div>}</div>
   }
 }

@@ -18,6 +18,7 @@
         "name": "next"
       }
     ],
+    "types": ["@testing-library/jest-dom"],
     "paths": {
       "@/*": ["./src/*"],
       "@components/*": ["./src/app/components/*"],
@@ -26,6 +27,6 @@
       "@assets/*": ["./src/app/assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "./jest-setup.ts"],
+  "exclude": ["node_modules", "**.stories.tsx", "cypress.config.ts"]
 }

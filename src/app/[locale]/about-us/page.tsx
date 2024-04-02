@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import { getAllUsers } from '@/api'
 import { UserCard } from '@/app/components/entities/user/UserCard'
 import { JoinUs } from '@/app/components/shared/JoinUs'

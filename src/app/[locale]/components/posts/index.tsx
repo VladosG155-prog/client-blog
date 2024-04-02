@@ -1,12 +1,13 @@
 'use client'
-import { MotionSection } from '@/app/components/shared/Motion'
-
-import styles from './Posts.module.scss'
-import { Post } from '@/app/components/entities/Post'
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+
+import { Post } from '@/app/components/entities/Post'
+import { MotionSection } from '@/app/components/shared/Motion'
 import { ROUTES } from '@/app/constants/routes'
 import { allPosts, featurePost } from '../../config'
-import Link from 'next/link'
+
+import styles from './Posts.module.scss'
 export const Posts = () => {
   const t = useTranslations()
 
