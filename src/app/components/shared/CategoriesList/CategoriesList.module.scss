@@ -1,0 +1,28 @@
+.center {
+  text-align: center;
+}
+
+.cards {
+  margin-top: 128px;
+  & h2 {
+    @include heading(2);
+  }
+
+  .wrapper {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    @include laptop {
+      justify-items: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .row {
+      flex-direction: row;
+    }
+    &.column {
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+}

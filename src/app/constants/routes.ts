@@ -4,5 +4,7 @@ export const ROUTES = {
   ABOUT_US: '/about-us',
   CONTACT_US: '/contact-us',
   POSTS: '/posts',
-  PRIVACY_POLICY: '/privacy_policy'
+  PRIVACY_POLICY: '/privacy-policy',
+  AUTHORS: '/authors',
+  CATEGORIES: '/category'
 }

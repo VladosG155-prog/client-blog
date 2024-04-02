@@ -3,7 +3,9 @@
   margin: 0 auto;
   margin-top: 120px;
   width: 40%;
-
+  @include laptop {
+    width: 100%;
+  }
   & h2 {
     @include heading(2);
     line-height: 48px;

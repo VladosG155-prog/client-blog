@@ -4,7 +4,8 @@ export interface IPostProps {
   createdDate: string
   createdBy: string
   description: string
-  image?: StaticImageData
+  image?: string
   title: string
   isPreviewPost?: boolean
+  size?: 'lg' | 'md' | 'xl'
 }

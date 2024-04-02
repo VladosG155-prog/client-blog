@@ -13,7 +13,7 @@ export const Footer = () => {
   const t = useTranslations('header')
 
   return (
-    <footer className={styles.root}>
+    <footer data-testid='footer' className={styles.root}>
       <div className={styles.footerFirst}>
         <h4>Modsen Client Blog</h4>
         <nav className={styles.nav}>

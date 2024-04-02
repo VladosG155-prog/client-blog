@@ -1,11 +1,9 @@
-import { iconNames } from '@components/ui/Icon/config'
-import { StaticImageData } from 'next/image'
-
 export interface IUserCardProps {
-  imageUrl: StaticImageData
+  id: string
+  imageUrl: string
   name: string
   jobPosition: string
   links: {
-    [key in Extract<keyof typeof iconNames, 'instagram' | 'linkedin' | 'facebook' | 'twitter'>]: string
+    [key in 'instagram' | 'linkedin' | 'facebook' | 'twitter']: string
   }
 }

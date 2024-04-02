@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 
 import { UserPreview } from '@/app/components/entities/user/UserPreview'
 import { Icon } from '@/app/components/ui/Icon'
@@ -11,6 +12,8 @@ import styles from './Review.module.scss'
 
 export const Review = () => {
   const [activeSlide, setActiveSlide] = useState(1)
+
+  const t = useTranslations('slider')
 
   const handleClickNext = () => {
     if (activeSlide === slides.length) {
@@ -30,8 +33,8 @@ export const Review = () => {
   return (
     <section className={styles.root}>
       <div className={styles.firstSection}>
-        <h5>Testimonials</h5>
-        <h2>What people say about our blog</h2>
+        <h5>{t('review')}</h5>
+        <h2>{t('what_say')}</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
       </div>
       <div className={styles.secondSection}>
@@ -42,7 +45,7 @@ export const Review = () => {
                 activeSlide === id && (
                   <div key={id} className={classNames(styles.slideItem, { [styles.active]: activeSlide === id })}>
                     <h4 className={styles.slideText}>{text}</h4>
-                    <UserPreview imageUrl={imageUrl} name={name} city={city} />
+                    <UserPreview imageUrl={imageUrl.src} name={name} city={city} />
                   </div>
                 )
             )}
@@ -51,7 +54,7 @@ export const Review = () => {
             <button onClick={handleClickPrev} className={styles.prev}>
               <Icon name='prevArrow' />
             </button>
-            <button onClick={handleClickNext}>
+            <button className={styles.disabledArrow} onClick={handleClickNext}>
               <Icon name='nextArrow' />
             </button>
           </div>

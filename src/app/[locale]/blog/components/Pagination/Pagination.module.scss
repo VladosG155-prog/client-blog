@@ -1,0 +1,15 @@
+.nav {
+  @include flex($justify: center);
+  gap: 15px;
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    @include heading(3);
+    &:disabled {
+      @include heading(4);
+      color: var(--color-light_gray);
+    }
+  }
+}

@@ -5,6 +5,13 @@
 }
 .image {
   width: 70%;
+  & img {
+    width: 100%;
+    height: auto;
+  }
+  @include laptop {
+    width: 100%;
+  }
 }
 .info {
   background: var(--color-white);
@@ -13,6 +20,11 @@
   right: 0;
   bottom: 0;
   width: 60%;
+  @include laptop {
+    position: unset;
+    width: 100%;
+    padding: 40px;
+  }
   & h5 {
     @include interText($color: var(--color-dark_blue), $weight: 600);
     text-transform: uppercase;
@@ -26,5 +38,14 @@
   & p {
     @include interText;
     margin-bottom: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @include tablet {
+    padding: 40px;
+    & h1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }

@@ -14,7 +14,8 @@ import userImage3 from '@assets/userImage3.png'
 import userImage4 from '@assets/userImage4.png'
 
 export const featurePost = {
-  image: postImage,
+  image:
+    'https://images.unsplash.com/photo-1630476022309-fda8f5edc9ef?q=80&w=2777&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
   createdBy: 'John Doe',
   createdDate: 'May 23, 2022',
@@ -57,7 +58,6 @@ export const allPosts = [
   }
 ]
 
-type TIconKey = keyof typeof iconNames
 export const authors: {
   id: number
   imageUrl: StaticImageData

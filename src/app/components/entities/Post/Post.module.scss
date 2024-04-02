@@ -1,8 +1,11 @@
 .root {
   padding: 32px;
   cursor: pointer;
+  &.medium {
+    max-width: 405px;
+    padding: 0px;
+  }
   transition: 0.3s all ease-in-out;
-
   &.preview {
     padding: 20px 16px;
     &:hover {
@@ -19,6 +22,7 @@
   & img {
     width: 100%;
     height: auto;
+    max-height: 350px;
   }
 
   p {

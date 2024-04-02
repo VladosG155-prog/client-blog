@@ -6,32 +6,53 @@
   position: relative;
   @include flex($align: center, $justify: flex-start);
 }
+.first {
+  width: 60%;
+  @include laptop {
+    width: 100%;
+  }
+}
+.second {
+  width: 40%;
+  @include laptop {
+    width: 100%;
+    max-width: 400px;
+  }
+}
 .container {
-  @include container;
-  color: var(--color-white);
-
+  color: var(--color-dark);
+  @include flex;
+  gap: 30px;
+  padding: 0px 70px;
+  @include laptop {
+    flex-direction: column-reverse;
+  }
+  & img {
+    width: 100%;
+    height: auto;
+  }
   & h1 {
     @include heading(0);
-    max-width: 60%;
     line-height: 1.25;
     margin-bottom: 25px;
   }
   & h4 {
     @include heading(6);
     font-family: var(--font-inter);
+    color: var(--color-dark_blue);
     font-weight: 500;
-
+    letter-spacing: 3px;
+    text-transform: uppercase;
     margin-bottom: 25px;
     & span {
       font-weight: 900;
     }
   }
   & p {
-    @include interText($color: var(--color-white));
+    @include interText($color: var(--color-dark));
     margin-bottom: 15px;
-    max-width: 45%;
     & span {
-      color: var(--color-yellow);
+      color: var(--color-purple);
     }
   }
 }
