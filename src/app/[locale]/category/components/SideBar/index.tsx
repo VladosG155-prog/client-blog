@@ -59,13 +59,14 @@ export const SideBar = () => {
       <div className={styles.search}>
         <div className={styles.searchMenu}>
           <input
+            data-testid='tags-search'
             type='text'
             onClick={handleClickInput}
             value={searchValue}
             onChange={handleChangeSearchInput}
             placeholder='Search for tag...'
           />
-          <div onClick={handleClickSearch} className={styles.btn}>
+          <div data-testid='search-btn' onClick={handleClickSearch} className={styles.btn}>
             <Button variant='primary' size='sm'>
               Search
             </Button>
@@ -75,7 +76,7 @@ export const SideBar = () => {
         {isShowSearch && (
           <div className={styles.searchOptions}>
             {filteredTags.map(({ value, id }) => (
-              <span key={id} onClick={handleClickMenu(value)}>
+              <span data-testid='search-hints' key={id} onClick={handleClickMenu(value)}>
                 {value}
               </span>
             ))}
