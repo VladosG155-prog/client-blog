@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import { Inter, Sen } from 'next/font/google'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 
+import { Footer } from '@/app/components/shared/Footer'
+import { Header } from '@/app/components/shared/Header'
 import '../styles/index.scss'
-import { Footer } from '../components/shared/Footer'
-import { Header } from '../components/shared/Header'
 
 const inter = Inter({ subsets: ['latin'], weight: ['900', '700', '400', '500'], variable: '--font-inter' })
 const sen = Sen({ subsets: ['latin'], weight: ['700', '400', '500'], variable: '--font-sen' })
