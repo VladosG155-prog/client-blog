@@ -1,5 +1,6 @@
-import { MotionSection } from '@/app/components/shared/Motion'
 import React from 'react'
+
+import { MotionSection } from '@/app/components/shared/Motion'
 import { companies } from '../../config'
 
 import styles from './Companies.module.scss'
