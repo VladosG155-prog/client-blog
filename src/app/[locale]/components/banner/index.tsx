@@ -21,11 +21,11 @@ export const Banner = () => {
           By <span>James West</span> | May 23, 2022
         </p>
         <p>{t('banner.description')}</p>
-        <Button variant='primary'>
-          <Link href={ROUTES.BLOG + '/' + 1}>
+        <Link href={ROUTES.BLOG + '/' + 1}>
+          <Button variant='primary'>
             {t('Read more')} {'>'}{' '}
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
     </div>
   )

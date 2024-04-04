@@ -42,7 +42,7 @@ const Category = async ({ searchParams }: { searchParams: { val: string; tags: s
             <Pagination hasNextPage={posts.hasNext} hasPrevPage={posts.hasPrev} />
           </div>
         ) : (
-          <h2>Thit category doesn{"'"}t have posts yet</h2>
+          <h2>This category doesn{"'"}t have posts yet</h2>
         )}
         <SideBar />
       </div>

@@ -46,7 +46,6 @@ export const Header = () => {
       )
     })
   }
-
   return (
     <header className={styles.header}>
       <h4>Modsen Client Blog</h4>

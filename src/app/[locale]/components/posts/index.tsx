@@ -20,7 +20,7 @@ export const Posts = () => {
     >
       <div className={styles.featurePost}>
         <div className={styles.header}>
-          <h3>Featured Post</h3>
+          <h3>{t('Featured Post')}</h3>
         </div>
         <div className={styles.singlePost}>
           <Post {...featurePost} />
