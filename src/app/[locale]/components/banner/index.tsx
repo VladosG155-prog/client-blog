@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
-import { Button } from '@/app/components/ui/Button'
+import { Button } from 'client-blog-ui'
 import { ROUTES } from '@/app/constants/routes'
 
 import styles from './Banner.module.scss'

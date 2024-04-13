@@ -5,7 +5,8 @@ import { useTranslations } from 'next-intl'
 import { Post } from '@/app/components/entities/Post'
 import { MotionSection } from '@/app/components/shared/Motion'
 import { ROUTES } from '@/app/constants/routes'
-import { allPosts, featurePost } from '../../config'
+
+import { allPosts, featurePost } from './Posts.config'
 
 import styles from './Posts.module.scss'
 export const Posts = () => {
@@ -29,7 +30,7 @@ export const Posts = () => {
       <div className={styles.allPosts}>
         <div className={styles.header}>
           <h3>{t('All posts')}</h3>
-          <Link href={ROUTES.BLOG}>View All</Link>
+          <Link href={ROUTES.BLOG}>{t('View All')}</Link>
         </div>
         {allPosts.map(({ id, title, description, createdBy, createdDate }) => (
           <Post

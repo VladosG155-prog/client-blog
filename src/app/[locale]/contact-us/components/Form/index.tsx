@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Map, Marker } from 'react-map-gl'
 import { object, string } from 'yup'
 
-import { Button } from '@/app/components/ui/Button'
+import { Button } from 'client-blog-ui'
 import { Icon } from '@/app/components/ui/Icon'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -53,7 +53,6 @@ export const Form = () => {
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message)
-        console.log(error)
       }
     }
   }

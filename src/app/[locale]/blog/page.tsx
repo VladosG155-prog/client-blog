@@ -18,7 +18,7 @@ const Blog = async ({ searchParams }: { searchParams: { page: string } }) => {
   const t = await getTranslations()
 
   return (
-    <div>
+    <>
       <BlogBanner />
       <section className={styles.posts}>
         <h1 id='posts'>{t('All posts')}</h1>
@@ -40,7 +40,7 @@ const Blog = async ({ searchParams }: { searchParams: { page: string } }) => {
       </section>
       <CategoriesList title='All Categories' />
       <JoinUs />
-    </div>
+    </>
   )
 }
 

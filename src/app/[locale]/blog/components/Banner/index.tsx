@@ -1,7 +1,6 @@
+import { Button } from 'client-blog-ui'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-
-import { Button } from '@/app/components/ui/Button'
 
 import styles from './BlogBanner.module.scss'
 

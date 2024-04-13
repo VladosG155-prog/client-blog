@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import Link from 'next/link'
 
-import { Icon } from '../../ui/Icon'
+import { Icon } from '@/app/components/ui/Icon'
 
-import { ILinksProps } from './types'
+import { ILinksProps } from './Links.types'
 
 import styles from './Links.module.scss'
 

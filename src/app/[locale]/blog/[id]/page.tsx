@@ -6,9 +6,9 @@ import { UserPreview } from '@/app/components/entities/user/UserPreview'
 import { JoinUs } from '@/app/components/shared/JoinUs'
 import { Icon } from '@/app/components/ui/Icon'
 
-import styles from './BlogPost.module.scss'
+import { nextPosts } from './BlogPost.config'
 
-import nextPost from '@assets/nextPost.png'
+import styles from './BlogPost.module.scss'
 
 const BlogPost = async ({ params }: { params: { id: string } }) => {
   const post = await getPostById(+params.id)
@@ -40,30 +40,17 @@ const BlogPost = async ({ params }: { params: { id: string } }) => {
       <section className={styles.readNext}>
         <h2>What to read next</h2>
         <div className={styles.wrapper}>
-          <Post
-            image={nextPost.src}
-            size='md'
-            createdBy='John Doe'
-            createdDate='Aug 23, 2021 '
-            title='A UX Case Study Creating a Studious Environment for Students: '
-            description='A UX Case Study Creating a Studious Environment for Students: '
-          />
-          <Post
-            image={nextPost.src}
-            size='md'
-            createdBy='John Doe'
-            createdDate='Aug 23, 2021 '
-            title='A UX Case Study Creating a Studious Environment for Students: '
-            description='A UX Case Study Creating a Studious Environment for Students: '
-          />
-          <Post
-            image={nextPost.src}
-            size='md'
-            createdBy='John Doe'
-            createdDate='Aug 23, 2021 '
-            title='A UX Case Study Creating a Studious Environment for Students: '
-            description='A UX Case Study Creating a Studious Environment for Students: '
-          />
+          {nextPosts.map(({ id, image, size, createdBy, createdDate, title, description }) => (
+            <Post
+              key={id}
+              image={image}
+              size={size}
+              createdBy={createdBy}
+              createdDate={createdDate}
+              title={title}
+              description={description}
+            />
+          ))}
         </div>
       </section>
       <JoinUs />

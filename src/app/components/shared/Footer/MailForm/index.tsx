@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser'
 import { useTranslations } from 'next-intl'
 import { object, string } from 'yup'
 
-import { Button } from '@/app/components/ui/Button'
+import { Button } from 'client-blog-ui'
 import { Toast } from '@/app/components/ui/Toast'
 
 import styles from './MailForm.module.scss'
@@ -45,7 +45,6 @@ export const MailForm = () => {
     } catch (error) {
       if (error instanceof Error) {
         setStatus({ type: 'error', message: error.message })
-        console.log(error)
       }
     }
   }

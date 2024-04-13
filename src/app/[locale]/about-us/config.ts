@@ -1,5 +1,7 @@
 import { StaticImageData } from 'next/image'
 
+import { TSocial } from '@/types'
+
 import userImage1 from '@assets/userImage.png'
 import userImage2 from '@assets/userImage2.png'
 import userImage3 from '@assets/userImage3.png'
@@ -11,7 +13,7 @@ export const authors: {
   name: string
   jobPosition: string
   links: {
-    [key in 'facebook' | 'twitter' | 'instagram' | 'linkedin']: string
+    [key in TSocial]: string
   }
 }[] = [
   {
@@ -70,4 +72,10 @@ export const authors: {
     jobPosition: 'Content Writer @Company',
     links: { facebook: 'link1', twitter: 'link2', instagram: 'link3', linkedin: 'link4' }
   }
+]
+
+export const counters = [
+  { id: 1, title: 'Blogs Published', count: 12 },
+  { id: 2, title: 'Views on Finsweet', count: 18 },
+  { id: 3, title: 'Total active Users', count: 30 }
 ]

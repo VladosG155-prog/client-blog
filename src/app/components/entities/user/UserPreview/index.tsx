@@ -2,7 +2,7 @@ import { FC } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-import { IUserPreviewProps } from './types'
+import { IUserPreviewProps } from './UserPreview.types'
 
 import styles from './UserPreview.module.scss'
 

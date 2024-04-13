@@ -6,6 +6,7 @@ import { JoinUs } from '@/app/components/shared/JoinUs'
 import { MotionDiv, MotionSection } from '@/app/components/shared/Motion'
 
 import { Counter } from './components/Counter'
+import { counters } from './config'
 
 import styles from './AboutUs.module.scss'
 
@@ -43,26 +44,14 @@ const AboutUs = async () => {
         </div>
         <Image src={aboutImage} alt='about-us-overview' />
         <div className={styles.stats}>
-          <div>
-            <h1>
-              <Counter count={12} />+
-            </h1>
-            <p>Blogs Published</p>
-          </div>
-          <div>
-            <h1>
-              <Counter count={18} />
-              K+
-            </h1>
-            <p>Views on Finsweet</p>
-          </div>
-          <div>
-            <h1>
-              <Counter count={30} />
-              K+
-            </h1>
-            <p>Total active Users</p>
-          </div>
+          {counters.map(({ title, id, count }) => (
+            <div key={id}>
+              <h2>
+                <Counter count={count} />+
+              </h2>
+              <p>{title}</p>
+            </div>
+          ))}
         </div>
         <div className={styles.lines}>
           <div></div>

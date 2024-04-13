@@ -1,13 +1,7 @@
 import { StaticImageData } from 'next/image'
 
-import { iconNames } from '@/app/components/ui/Icon/config'
+import { TSocial } from '@/types'
 
-import LogoIcon1 from '@assets/icons/Logo1.svg'
-import LogoIcon2 from '@assets/icons/Logo2.svg'
-import LogoIcon3 from '@assets/icons/Logo3.svg'
-import LogoIcon4 from '@assets/icons/Logo4.svg'
-import LogoIcon5 from '@assets/icons/Logo5.svg'
-import postImage from '@assets/post.png'
 import userImage1 from '@assets/userImage.png'
 import userImage2 from '@assets/userImage2.png'
 import userImage3 from '@assets/userImage3.png'
@@ -64,7 +58,7 @@ export const authors: {
   name: string
   jobPosition: string
   links: {
-    [key in 'facebook' | 'twitter' | 'instagram' | 'linkedin']: string
+    [key in TSocial]: string
   }
 }[] = [
   {
@@ -96,5 +90,3 @@ export const authors: {
     links: { facebook: 'link1', twitter: 'link2', instagram: 'link3', linkedin: 'link4' }
   }
 ]
-
-export const companies = [LogoIcon1, LogoIcon2, LogoIcon3, LogoIcon4, LogoIcon5]

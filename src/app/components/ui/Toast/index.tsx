@@ -2,9 +2,9 @@
 import { FC, useEffect } from 'react'
 import classNames from 'classnames'
 
-import { MotionDiv } from '../../shared/Motion'
+import { MotionDiv } from '@/app/components/shared/Motion'
 
-import { IToastProps } from './types'
+import { IToastProps } from './Toast.types'
 
 import styles from './Toast.module.scss'
 

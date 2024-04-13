@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl'
 
 import { ROUTES } from '@/app/constants/routes'
 
-import { IPostProps } from './types'
+import { IPostProps } from './Post.types'
 
 import styles from './Post.module.scss'
 
