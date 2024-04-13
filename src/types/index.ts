@@ -1,3 +1,5 @@
+export type TSocial = 'facebook' | 'twitter' | 'instagram' | 'linkedin'
+
 export interface IUser {
   avatar: string
   id: string

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 import { getAllUsers } from '@/api'
 import { UserCard } from '@/app/components/entities/user/UserCard'
@@ -26,6 +27,8 @@ const LazyJoinUs = withLazyLoad(JoinUs)
 const Home = () => {
   const [authors, setAuthors] = useState<IUser[]>([])
 
+  const t = useTranslations()
+
   useEffect(() => {
     getAllUsers().then((data) => {
       setAuthors(data)
@@ -37,7 +40,7 @@ const Home = () => {
       <Banner />
       <LazyPosts />
       <LazyAbout />
-      <LazyCategories align='center' title='Choose A Catagory' />
+      <LazyCategories align='center' title={t('Choose A Catagory')} />
       <LazySpecialPost />
       <MotionSection className={styles.authors}>
         <h2>List of Authors</h2>

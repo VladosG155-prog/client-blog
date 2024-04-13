@@ -1,11 +1,12 @@
 'use client'
 import { ChangeEvent, useMemo, useState } from 'react'
 import classNames from 'classnames'
+import { Button } from 'client-blog-ui'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 import { CategoriesList } from '@/app/components/shared/CategoriesList'
-import { Button } from '@/app/components/ui/Button'
-import { tags } from '../../config'
+
+import { tags } from './Sidebar.config'
 
 import styles from './SideBar.module.scss'
 export const SideBar = () => {

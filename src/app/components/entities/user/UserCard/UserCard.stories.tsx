@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { UserCard } from '.'
 
-import { IUserCardProps } from './types'
+import { IUserCardProps } from './UserCard.types'
 
 const meta = {
   title: 'Entities/UserCard',

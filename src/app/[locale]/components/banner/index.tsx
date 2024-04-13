@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
-import { Button } from '@/app/components/ui/Button'
+import { Button } from 'client-blog-ui'
 import { ROUTES } from '@/app/constants/routes'
 
 import styles from './Banner.module.scss'
@@ -21,11 +21,11 @@ export const Banner = () => {
           By <span>James West</span> | May 23, 2022
         </p>
         <p>{t('banner.description')}</p>
-        <Button variant='primary'>
-          <Link href={ROUTES.BLOG + '/' + 1}>
+        <Link href={ROUTES.BLOG + '/' + 1}>
+          <Button variant='primary'>
             {t('Read more')} {'>'}{' '}
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
     </div>
   )

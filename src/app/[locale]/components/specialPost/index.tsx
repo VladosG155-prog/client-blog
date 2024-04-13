@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import { MotionDiv } from '@/app/components/shared/Motion'
-import { Button } from '@/app/components/ui/Button'
+import { Button } from 'client-blog-ui'
 
 import styles from './SpecialPost.module.scss'
 
@@ -11,7 +11,6 @@ import specialPng from '@assets/special.png'
 
 export const SpecialPost = () => {
   const t = useTranslations()
-  console.log('@agaga')
   return (
     <div className={styles.root}>
       <div className={styles.image}>

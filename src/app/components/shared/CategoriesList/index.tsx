@@ -1,9 +1,9 @@
 import { FC } from 'react'
 
-import { CategoryCard } from '../../entities/CategoryCard'
-import { iconNames } from '../../ui/Icon/config'
+import { CategoryCard } from '@/app/components/entities/CategoryCard'
+import { iconNames } from '@/app/components/ui/Icon/config'
 
-import { ICategoriesListProps } from './types'
+import { ICategoriesListProps } from './CategoriesList.types'
 
 import styles from './CategoriesList.module.scss'
 

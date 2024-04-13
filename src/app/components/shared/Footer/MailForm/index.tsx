@@ -1,10 +1,11 @@
 'use client'
 import { ChangeEvent, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { Button } from 'client-blog-ui'
 import { useTranslations } from 'next-intl'
 import { object, string } from 'yup'
 
-import { Button } from '@/app/components/ui/Button'
+import { Toast } from '@/app/components/ui/Toast'
 
 import styles from './MailForm.module.scss'
 
@@ -14,7 +15,7 @@ const schema = object({
 
 export const MailForm = () => {
   const [email, setEmail] = useState('')
-  const [error, setError] = useState('')
+  const [status, setStatus] = useState({ type: '', message: '' })
 
   const t = useTranslations()
 
@@ -27,7 +28,7 @@ export const MailForm = () => {
   }
 
   const handleSendForm = async () => {
-    setError('')
+    setStatus({ type: '', message: '' })
     try {
       await validate()
 
@@ -39,10 +40,11 @@ export const MailForm = () => {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
         }
       )
+      setStatus({ type: 'success', message: 'email has been successfuly sended ' })
+      setEmail('')
     } catch (error) {
       if (error instanceof Error) {
-        setError(error.message)
-        console.log(error)
+        setStatus({ type: 'error', message: error.message })
       }
     }
   }
@@ -51,13 +53,20 @@ export const MailForm = () => {
     setEmail(e.target.value)
   }
 
+  const handleCloseToast = () => {
+    setStatus({ type: '', message: '' })
+  }
+
   return (
     <div className={styles.root}>
+      <Toast isOpen={!!status.message.length} onClose={handleCloseToast} type={status.type}>
+        {status.message}
+      </Toast>
       <h2>{t('footer')}</h2>
+
       <div className={styles.form}>
         <div className={styles.input}>
           <input type='email' name='email' value={email} onChange={handleChangeInput} placeholder='Enter Your Email' />
-          {error.length > 0 && <p>{error}</p>}
         </div>
         <Button variant='primary' onClick={handleSendForm}>
           Subscribe

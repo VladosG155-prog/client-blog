@@ -1,12 +1,11 @@
 'use client'
-import { useState, useTransition } from 'react'
-import { Button } from '@components/ui/Button'
+import { useEffect, useState, useTransition } from 'react'
 import classNames from 'classnames'
+import { Button, Modal } from 'client-blog-ui'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { Modal } from '@/app/components/ui/Modal'
 import { ROUTES } from '@/app/constants/routes'
 import { useMediaQuery } from '@/app/hooks/useMediaQuery'
 import { usePathname, useRouter } from '@/navigation'
@@ -35,6 +34,18 @@ export const Header = () => {
   const [isPending, startTransition] = useTransition()
   const params = useParams()
 
+  useEffect(() => {
+    if (isOpenBurger) {
+      document.body.style.overflowY = 'hidden'
+    } else {
+      document.body.style.overflowY = 'scroll'
+    }
+
+    return () => {
+      document.body.style.overflowY = 'scroll'
+    }
+  }, [isOpenBurger])
+
   const onChangeLocale = () => {
     startTransition(() => {
       router.replace(
@@ -46,7 +57,6 @@ export const Header = () => {
       )
     })
   }
-
   return (
     <header className={styles.header}>
       <h4>Modsen Client Blog</h4>
@@ -91,8 +101,7 @@ export const Header = () => {
       {isShowModal && (
         <Modal onClose={onToggleModal}>
           <iframe
-            width='560'
-            height='315'
+            className={styles.video}
             src='https://www.youtube.com/embed/kgHzwb37LLE?si=SKsybQwx3SNTAYqN'
             title='YouTube video player'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

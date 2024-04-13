@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation'
 import { Links } from '@/app/components/shared/Links'
 import { ROUTES } from '@/app/constants/routes'
 
-import { IUserCardProps } from './types'
+import { IUserCardProps } from './UserCard.types'
 
 import styles from './UserCard.module.scss'
 

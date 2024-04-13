@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { UserPreview } from '@/app/components/entities/user/UserPreview'
 import { Icon } from '@/app/components/ui/Icon'
 
-import { slides } from './config'
+import { slides } from './Review.config'
 
 import styles from './Review.module.scss'
 

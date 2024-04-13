@@ -1,10 +1,11 @@
 'use client'
 import { ChangeEvent, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { useTranslations } from 'next-intl'
 import { Map, Marker } from 'react-map-gl'
 import { object, string } from 'yup'
 
-import { Button } from '@/app/components/ui/Button'
+import { Button } from 'client-blog-ui'
 import { Icon } from '@/app/components/ui/Icon'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -19,6 +20,8 @@ const schema = object({
 
 export const Form = () => {
   const [formData, setFormData] = useState({})
+
+  const t = useTranslations()
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -50,7 +53,6 @@ export const Form = () => {
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message)
-        console.log(error)
       }
     }
   }
@@ -63,7 +65,7 @@ export const Form = () => {
       <textarea name='message' onChange={handleChange} placeholder='Message'></textarea>
       {error.length > 0 && <p>{error}</p>}
       <Button variant='primary' onClick={handleSendForm} size='full'>
-        Send Message
+        {t('Send message')}
       </Button>
       <div className={styles.map}>
         <Map

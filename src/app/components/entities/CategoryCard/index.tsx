@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 
 import { ROUTES } from '@/app/constants/routes'
 
-import { ICategoryCardProps } from './types'
+import { ICategoryCardProps } from './CategoryCard.types'
 
 import styles from './CategoryCard.module.scss'
 

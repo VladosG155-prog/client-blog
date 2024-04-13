@@ -1,0 +1,14 @@
+.root {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  padding: 20px;
+  &.success {
+    background: var(--color-white);
+    color: green;
+  }
+  &.error {
+    background: red;
+    color: var(--color-white);
+  }
+}

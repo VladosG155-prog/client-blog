@@ -1,4 +1,4 @@
-import { IPost, IPostResponse, IUser } from './types'
+import { IPost, IPostResponse, IUser } from '../types'
 
 const baseUrl = 'https://api-json-server-mauve.vercel.app'
 

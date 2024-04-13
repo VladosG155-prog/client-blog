@@ -1,15 +1,18 @@
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { Form } from './components/Form'
 
 import styles from './Contact.module.scss'
 
 const Contact = () => {
+  const t = useTranslations('')
+
   return (
     <div className={styles.root}>
       <div className={styles.start}>
-        <h6>Contact us</h6>
-        <h1>Let’s Start a Conversation</h1>
+        <h6>{t('header.Contact_us')}</h6>
+        <h1>{t('Let’s Start a Conversation')}</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim.

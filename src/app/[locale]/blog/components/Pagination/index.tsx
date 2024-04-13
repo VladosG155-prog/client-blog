@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 
-import { IPaginationProps } from './types'
+import { IPaginationProps } from './Pagination.types'
 
 import styles from './Pagination.module.scss'
 

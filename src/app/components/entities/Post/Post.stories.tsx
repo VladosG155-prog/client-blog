@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Post } from '.'
 
-import { IPostProps } from './types'
+import { IPostProps } from './Post.types'
 
 const meta = {
   title: 'Entities/Post',

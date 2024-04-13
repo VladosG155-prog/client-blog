@@ -1,13 +1,13 @@
 import { FC } from 'react'
-import { Button } from '@components/ui/Button'
 import classNames from 'classnames'
+import { Button } from 'client-blog-ui'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 import { ROUTES } from '@/app/constants/routes'
 
-import { IPostProps } from './types'
+import { IPostProps } from './Post.types'
 
 import styles from './Post.module.scss'
 

@@ -55,7 +55,7 @@
     position: relative;
     left: 0;
   }
-  & h1 {
+  & h2 {
     @include heading(0);
   }
   & p {
