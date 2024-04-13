@@ -1,10 +1,10 @@
 'use client'
 import { ChangeEvent, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { Button } from 'client-blog-ui'
 import { useTranslations } from 'next-intl'
 import { object, string } from 'yup'
 
-import { Button } from 'client-blog-ui'
 import { Toast } from '@/app/components/ui/Toast'
 
 import styles from './MailForm.module.scss'
