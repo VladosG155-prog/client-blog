@@ -1,4 +1,4 @@
-import { Button } from '@components/ui/Button'
+import { Button } from 'client-blog-ui'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
