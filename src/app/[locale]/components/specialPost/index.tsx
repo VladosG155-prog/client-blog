@@ -1,9 +1,9 @@
 'use client'
+import { Button } from 'client-blog-ui'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import { MotionDiv } from '@/app/components/shared/Motion'
-import { Button } from 'client-blog-ui'
 
 import styles from './SpecialPost.module.scss'
 
