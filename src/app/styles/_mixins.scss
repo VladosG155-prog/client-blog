@@ -23,11 +23,11 @@
 
 @mixin container {
   width: calc(100% - 160px);
-  padding: 0px 15px;
+  padding: 0px var(--space-1);
   margin: 0 auto;
   @include tablet() {
     width: 100%;
-    padding: 0px 15px;
+    padding: 0px var(--space-1);
   }
 }
 

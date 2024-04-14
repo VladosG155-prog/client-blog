@@ -32,7 +32,7 @@
       @include heading(2, $color: var(--color-dark_blue));
       line-height: 48px;
       margin-top: 12px;
-      margin-bottom: 16px;
+      margin-bottom: var(--space-1);
     }
     & p {
       @include interText;
@@ -46,7 +46,7 @@
     }
     & .slideText {
       @include heading(4);
-      line-height: 32px;
+      line-height: var(--space-2);
       flex: 1 0;
       max-height: 130px;
       text-overflow: ellipsis;
@@ -79,7 +79,7 @@
   bottom: 0;
   right: 0px;
   @include flex;
-  gap: 25px;
+  gap: var(--space-1-2);
   @include phone-600 {
     position: unset;
     justify-content: center;

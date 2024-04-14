@@ -14,7 +14,7 @@
   }
 }
 .info {
-  margin-left: 30px;
+  margin-left: var(--space-2);
   @include laptop {
     margin-left: 0px;
   }
@@ -32,6 +32,6 @@
     color: var(--color-dark_blue);
     margin-top: 20px;
     letter-spacing: 1.33;
-    margin-bottom: 16px;
+    margin-bottom: var(--space-1);
   }
 }

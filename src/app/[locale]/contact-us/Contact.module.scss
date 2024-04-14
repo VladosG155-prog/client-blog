@@ -1,14 +1,14 @@
 .root {
   max-width: 768px;
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: var(--space-section);
   @include flex($direction: column, $align: center, $justify: center);
   text-align: center;
 }
 .start {
   & h1 {
     @include heading(1);
-    margin-bottom: 25px;
+    margin-bottom: var(--space-1-2);
   }
   & p {
     @include interText;
@@ -31,16 +31,16 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: var(--space-2);
   & h6 {
     @include interText($color: var(--color-white_gray));
     font-size: var(--text-size-7);
-    padding-bottom: 15px;
+    padding-bottom: var(--space-1);
     opacity: 0.6;
     border-bottom: 1px solid var(--color-white);
   }
   & h5 {
-    margin-top: 15px;
+    margin-top: var(--space-1);
     @include heading(5);
     & a {
       color: var(--color-white);

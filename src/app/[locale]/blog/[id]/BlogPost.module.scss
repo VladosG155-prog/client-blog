@@ -1,5 +1,5 @@
 .root {
-  padding-top: 120px;
+  padding-top: var(--space-section);
 }
 .container {
   max-width: 836px;
@@ -16,13 +16,13 @@
   margin-bottom: 65px;
   & h1 {
     @include heading(1);
-    line-height: 64px;
-    margin-top: 25px;
+    line-height: var(--space-4);
+    margin-top: var(--space-1-2);
     margin-bottom: 35px;
   }
 }
 .readNext {
-  margin-top: 120px;
+  margin-top: var(--space-section);
   & h2 {
     @include heading(2);
     margin-bottom: 65px;
@@ -37,7 +37,7 @@
   & h2 {
     @include heading(2);
     line-height: 48px;
-    margin-bottom: 16px;
+    margin-bottom: var(--space-1);
   }
   & p {
     @include interText;

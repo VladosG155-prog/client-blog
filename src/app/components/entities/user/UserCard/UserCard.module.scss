@@ -33,7 +33,7 @@
 .links {
   margin-top: 20px;
   @include flex;
-  gap: 15px;
+  gap: var(--space-1);
 }
 .cardLink {
   position: absolute;

@@ -16,7 +16,7 @@
     @include heading(0);
     max-width: 60%;
     line-height: 1.25;
-    margin-bottom: 25px;
+    margin-bottom: var(--space-1-2);
     @include tablet {
       max-width: 100%;
     }
@@ -26,14 +26,14 @@
     font-family: var(--font-inter);
     font-weight: 500;
 
-    margin-bottom: 25px;
+    margin-bottom: var(--space-1-2);
     & span {
       font-weight: 900;
     }
   }
   & p {
     @include interText($color: var(--color-white));
-    margin-bottom: 15px;
+    margin-bottom: var(--space-1);
     max-width: 45%;
     @include tablet {
       max-width: 100%;
