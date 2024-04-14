@@ -2,7 +2,7 @@
   border: 1px solid var(--border-light_gray);
   max-width: 290px;
   width: 100%;
-  padding: 32px;
+  padding: var(--space-2);
   transition: 0.2s all ease;
   cursor: pointer;
   &.active {
@@ -14,7 +14,7 @@
   }
   &.row {
     @include flex($align: center, $justify: flex-start);
-    gap: 15px;
+    gap: var(--space-1);
     & h3 {
       margin-top: 0px;
       margin-bottom: 0px;
@@ -26,7 +26,7 @@
   }
   & h3 {
     @include heading(3);
-    margin-top: 16px;
+    margin-top: var(--space-1);
     margin-bottom: 4px;
   }
   & p {

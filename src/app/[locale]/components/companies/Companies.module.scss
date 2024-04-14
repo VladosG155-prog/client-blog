@@ -1,7 +1,7 @@
 .companies {
   margin-top: 100px;
   @include flex($wrap: wrap);
-  gap: 30px;
+  gap: var(--space-2);
 }
 
 .textLogo {
@@ -11,6 +11,6 @@
   }
   & h4 {
     @include heading(4, var(--color-light_gray));
-    line-height: 32px;
+    line-height: var(--space-2);
   }
 }

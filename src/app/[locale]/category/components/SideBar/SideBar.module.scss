@@ -10,7 +10,7 @@
   & input {
     height: 50px;
     width: 100%;
-    padding: 15px 25px;
+    padding: var(--space-1) var(--space-1-2);
     border-radius: 5px;
     outline: none;
     border: 1px solid var(--color-light_gray);
@@ -21,12 +21,12 @@
   margin-top: 50px;
   & h3 {
     @include heading(3);
-    margin-bottom: 25px;
+    margin-bottom: var(--space-1-2);
   }
 }
 .tagsWrapper {
   @include flex($wrap: wrap, $justify: stretch);
-  gap: 15px;
+  gap: var(--space-1);
   & span {
     &.active {
       background: var(--color-dark_blue);
@@ -34,7 +34,7 @@
     }
     cursor: pointer;
     width: max-content;
-    padding: 15px 35px;
+    padding: var(--space-1) 35px;
     border-radius: 30px;
     height: 50px;
     @include heading(7);

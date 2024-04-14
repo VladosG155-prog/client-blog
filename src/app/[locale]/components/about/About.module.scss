@@ -8,7 +8,7 @@
   @include laptop {
     padding: 40px;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: var(--space-2);
   }
   & h2 {
     @include heading(2);
@@ -29,11 +29,11 @@
   }
   & p {
     @include interText;
-    margin-top: 16px;
+    margin-top: var(--space-1);
     line-height: 28px;
   }
   & a {
-    margin-top: 16px;
+    margin-top: var(--space-1);
     font-family: var(--font-sen);
     color: var(--color-purple);
     font-weight: 700;

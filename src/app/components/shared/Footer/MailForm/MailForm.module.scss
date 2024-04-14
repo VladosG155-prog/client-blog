@@ -23,7 +23,7 @@
 }
 .form {
   @include flex;
-  gap: 25px;
+  gap: var(--space-1-2);
   @include phone-600 {
     flex-direction: column;
   }
@@ -32,7 +32,7 @@
     border: 1px solid var(--color-gray);
     outline: none;
     background: transparent;
-    padding-left: 25px;
+    padding-left: var(--space-1-2);
     width: 100%;
     color: var(--color-white);
   }

@@ -1,18 +1,18 @@
 .root {
   @include flex($direction: column);
   width: 100%;
-  gap: 15px;
+  gap: var(--space-1);
   & p {
     color: red;
   }
   & input {
     width: 100%;
-    padding: 25px;
+    padding: var(--space-1-2);
     @include interText;
   }
   & textarea {
     width: 100%;
-    padding: 25px;
+    padding: var(--space-1-2);
     @include interText;
     height: 145px;
   }

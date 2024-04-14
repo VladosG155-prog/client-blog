@@ -1,5 +1,5 @@
 .root {
-  padding: 32px;
+  padding: var(--space-2);
   cursor: pointer;
   &.medium {
     max-width: 405px;
@@ -7,7 +7,7 @@
   }
   transition: 0.3s all ease-in-out;
   &.preview {
-    padding: 20px 16px;
+    padding: 20px var(--space-1);
     &:hover {
       background: var(--color-light_yellow);
     }
@@ -29,8 +29,8 @@
     font-size: var(--text-size-7);
     margin-bottom: 33px;
     &.info {
-      margin-top: 32px;
-      margin-bottom: 16px;
+      margin-top: var(--space-2);
+      margin-bottom: var(--space-1);
       & a {
         color: var(--color-purple);
       }
@@ -43,6 +43,6 @@
   h3 {
     @include heading(3);
     line-height: 1.5;
-    margin-bottom: 15px;
+    margin-bottom: var(--space-1);
   }
 }

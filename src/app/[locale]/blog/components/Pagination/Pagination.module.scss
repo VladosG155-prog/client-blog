@@ -1,6 +1,6 @@
 .nav {
   @include flex($justify: center);
-  gap: 15px;
+  gap: var(--space-1);
   button {
     border: none;
     outline: none;

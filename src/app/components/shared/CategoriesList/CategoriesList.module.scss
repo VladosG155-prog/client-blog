@@ -22,7 +22,7 @@
     }
     &.column {
       flex-direction: column;
-      gap: 25px;
+      gap: var(--space-1-2);
     }
   }
 }

@@ -9,7 +9,7 @@
     text-align: center;
   }
   .wrapper {
-    gap: 32px;
+    gap: var(--space-2);
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
